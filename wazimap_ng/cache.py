@@ -92,7 +92,15 @@ def update_point_cache(category):
 
 @receiver(post_save, sender=ProfileIndicator)
 def profile_indicator_updated(sender, instance, **kwargs):
-    update_profile_cache(instance.profile)
+    #update_profile_cache(instance.profile)
+    profiles_to_invalidate_cache = Profile.objects.filter(
+        Q(id=instance.dataset.profile_id)
+        | Q(profileindicator__indicator_id__in=indicator_ids)
+        | Q(profilekeymetrics__variable_id__in=indicator_ids)
+        | Q(profilehighlight__indicator_id__in=indicator_ids)
+    ).distinct()
+    for profile_obj in profiles_to_invalidate_cache:
+        update_profile_cache(profile_obj)
 
 
 @receiver(post_save, sender=ProfileHighlight)
