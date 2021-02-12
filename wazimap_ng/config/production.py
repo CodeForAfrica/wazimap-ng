@@ -17,12 +17,13 @@ class Production(Common):
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/2.0/howto/static-files/
     # http://django-storages.readthedocs.org/en/latest/index.html
-    #INSTALLED_APPS += ('storages',)
-    #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    #AWS_ACCESS_KEY_ID = os.getenv('DJANGO_AWS_ACCESS_KEY_ID')
-    #AWS_SECRET_ACCESS_KEY = os.getenv('DJANGO_AWS_SECRET_ACCESS_KEY')
-    #AWS_STORAGE_BUCKET_NAME = os.getenv('DJANGO_AWS_STORAGE_BUCKET_NAME')
+    INSTALLED_APPS += ('storages',)
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    AWS_ACCESS_KEY_ID = os.getenv('DJANGO_AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('DJANGO_AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.getenv('DJANGO_AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
     #AWS_DEFAULT_ACL = 'public-read'
     #AWS_AUTO_CREATE_BUCKET = True
     #AWS_QUERYSTRING_AUTH = False
@@ -47,19 +48,19 @@ class Production(Common):
         }
     }
 
-    AWS_ACCESS_KEY_ID = Common.get_env_value('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = Common.get_env_value('AWS_SECRET_ACCESS_KEY')
+    # AWS_ACCESS_KEY_ID = Common.get_env_value('AWS_ACCESS_KEY_ID')
+    # AWS_SECRET_ACCESS_KEY = Common.get_env_value('AWS_SECRET_ACCESS_KEY')
 
-    DEFAULT_FILE_STORAGE = values.Value("django.core.files.storage.FileSystemStorage")
-    AWS_STORAGE_BUCKET_NAME = Common.get_env_value('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_REGION_NAME = Common.get_env_value('AWS_S3_REGION_NAME')
-    AWS_DEFAULT_ACL = None
+    # DEFAULT_FILE_STORAGE = values.Value("django.core.files.storage.FileSystemStorage")
+    # AWS_STORAGE_BUCKET_NAME = Common.get_env_value('AWS_STORAGE_BUCKET_NAME')
+    # AWS_S3_REGION_NAME = Common.get_env_value('AWS_S3_REGION_NAME')
+    # AWS_DEFAULT_ACL = None
 
     MAP_WIDGETS = {
         "GooglePointFieldWidget": (
-            ("zoom", 15),
-            ("mapCenterLocationName", "south africa"),
-            ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'za'}}),
+            ("zoom", 5),
+            ("mapCenterLocationName", "kenya"),
+            ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'ke'}}),
             ("markerFitZoom", 12),
         ),
         "GOOGLE_MAP_API_KEY": os.environ.get("GOOGLE_MAP_API_KEY", "")
