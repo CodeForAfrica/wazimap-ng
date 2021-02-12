@@ -37,6 +37,10 @@ services:
       - AWS_S3_REGION_NAME
       - DATABASE_URL
       - DJANGO_CONFIGURATION
+      - PGHOST=db
+      - PGDATABASE=wazimap_ng
+      - PGUSER=wazimap_ng
+      - PGPASSWORD=wazimap_ng
   queue:
     build: .
     command: /app/scripts/django/django_q.sh
