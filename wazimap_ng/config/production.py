@@ -17,8 +17,6 @@ class Production(Common):
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/2.0/howto/static-files/
     # http://django-storages.readthedocs.org/en/latest/index.html
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     AWS_ACCESS_KEY_ID = os.getenv('DJANGO_AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('DJANGO_AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = os.getenv('DJANGO_AWS_STORAGE_BUCKET_NAME')
@@ -26,14 +24,26 @@ class Production(Common):
     #AWS_DEFAULT_ACL = 'public-read'
     #AWS_AUTO_CREATE_BUCKET = True
     #AWS_QUERYSTRING_AUTH = False
-    #MEDIA_URL = f'https://s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/'
+    AWS_S3_CUSTOM_DOMAIN = 's3.{}.amazonaws.com/{}'.format(AWS_S3_REGION_NAME, AWS_STORAGE_BUCKET_NAME)
+    AWS_S3_HOST = 's3.{}.amazonaws.com'.format(AWS_S3_REGION_NAME)
+    AWS_DEFAULT_ACL = None
+
+    AWS_STATIC_LOCATION = 'static'
+    AWS_MEDIA_LOCATION = 'media'
+
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+    STATIC_URL = 'https://{}/{}/'.format(AWS_S3_CUSTOM_DOMAIN, AWS_STATIC_LOCATION)
+    MEDIA_URL = 'https://{}/{}/'.format(AWS_S3_CUSTOM_DOMAIN, AWS_MEDIA_LOCATION)
+
 
     # https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control
     # Response can be cached by browser and any intermediary caches (i.e. it is "public") for up to 1 day
     # 86400 = (60 seconds x 60 minutes x 24 hours)
-    #AWS_HEADERS = {
-    #    'Cache-Control': 'max-age=86400, s-maxage=86400, must-revalidate',
-    #}
+    AWS_HEADERS = {
+       'Cache-Control': 'max-age=86400, s-maxage=86400, must-revalidate',
+    }
 
     # Disable Django's own staticfiles handling in favour of WhiteNoise, for
     # greater consistency between gunicorn and `./manage.py runserver`. See:
@@ -46,14 +56,6 @@ class Production(Common):
             'LOCATION': '/var/tmp/django_cache',
         }
     }
-
-    # AWS_ACCESS_KEY_ID = Common.get_env_value('AWS_ACCESS_KEY_ID')
-    # AWS_SECRET_ACCESS_KEY = Common.get_env_value('AWS_SECRET_ACCESS_KEY')
-
-    # DEFAULT_FILE_STORAGE = values.Value("django.core.files.storage.FileSystemStorage")
-    # AWS_STORAGE_BUCKET_NAME = Common.get_env_value('AWS_STORAGE_BUCKET_NAME')
-    # AWS_S3_REGION_NAME = Common.get_env_value('AWS_S3_REGION_NAME')
-    # AWS_DEFAULT_ACL = None
 
     MAP_WIDGETS = {
         "GooglePointFieldWidget": (
