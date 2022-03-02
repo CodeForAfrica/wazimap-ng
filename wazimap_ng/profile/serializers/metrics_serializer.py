@@ -1,6 +1,6 @@
 from wazimap_ng.utils import mergedict
 
-from wazimap_ng.datasets.models import IndicatorData
+from wazimap_ng.datasets.models import IndicatorData, MetaData
 
 from .. import models
 
@@ -53,6 +53,7 @@ def MetricsSerializer(profile, geography, version):
         method = algorithms.get(denominator, absolute_value)
         val = method(profile_key_metric, geography)
         if val is not None:
+            metadata = MetaData.objects.filter(dataset = profile_key_metric.variable.dataset)
             js = {
                 profile_key_metric.subcategory.category.name: {
                     "subcategories": {
@@ -60,7 +61,8 @@ def MetricsSerializer(profile, geography, version):
                             "key_metrics": [{
                                 "label": profile_key_metric.label,
                                 "value": val,
-                                "method": denominator
+                                "method": denominator,
+                                "metadata": metadata
                             }]
                         }
                     }
