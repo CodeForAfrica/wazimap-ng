@@ -53,7 +53,7 @@ def MetricsSerializer(profile, geography, version):
         method = algorithms.get(denominator, absolute_value)
         val = method(profile_key_metric, geography)
         if val is not None:
-            metadata = MetaData.objects.filter(dataset = profile_key_metric.variable.dataset)
+            metadata = MetaData.objects.filter(dataset=profile_key_metric.variable.dataset).first()
             js = {
                 profile_key_metric.subcategory.category.name: {
                     "subcategories": {
