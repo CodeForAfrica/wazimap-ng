@@ -1,3 +1,4 @@
+from django.db.models import F
 from wazimap_ng.utils import mergedict
 
 from wazimap_ng.datasets.models import IndicatorData, MetaData
@@ -46,14 +47,14 @@ def MetricsSerializer(profile, geography, version):
     profile_key_metrics = (models.ProfileKeyMetrics.objects
         .filter(profile=profile, variable__dataset__version=version)
         .order_by("order")
-        .select_related("subcategory", "subcategory__category")
+        .select_related("subcategory", "subcategory__category", "variable__dataset__metadata" )
+
     )
     for profile_key_metric in profile_key_metrics:
         denominator = profile_key_metric.denominator
         method = algorithms.get(denominator, absolute_value)
         val = method(profile_key_metric, geography)
         if val is not None:
-            metadata = MetaData.objects.filter(dataset=profile_key_metric.variable.dataset).values("source", "description", "url").first()
             js = {
                 profile_key_metric.subcategory.category.name: {
                     "subcategories": {
@@ -62,7 +63,11 @@ def MetricsSerializer(profile, geography, version):
                                 "label": profile_key_metric.label,
                                 "value": val,
                                 "method": denominator,
-                                "metadata": metadata
+                                "metadata": {
+                                    "description": profile_key_metric.variable.dataset.metadata.description,
+                                    "source": profile_key_metric.variable.dataset.metadata.source,
+                                    "url": profile_key_metric.variable.dataset.metadata.url,
+                                }
                             }]
                         }
                     }
