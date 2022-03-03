@@ -1,7 +1,7 @@
 from django.db.models import F
 from wazimap_ng.utils import mergedict
 
-from wazimap_ng.datasets.models import IndicatorData, MetaData
+from wazimap_ng.datasets.models import IndicatorData
 
 from .. import models
 
