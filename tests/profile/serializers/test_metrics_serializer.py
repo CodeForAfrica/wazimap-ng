@@ -3,6 +3,7 @@ from unittest.mock import patch
 from wazimap_ng.profile.serializers.metrics_serializer import absolute_value, subindicator, sibling
 
 from tests.datasets.factories import GeographyFactory, IndicatorDataFactory
+from tests.profile.factories import ProfileKeyMetricsFactory
 
 @pytest.fixture
 def additional_data_json():
@@ -20,6 +21,15 @@ def additional_data_json():
             {"gender": "female", "colour": "green", "count": 42},
         ]
     ]
+
+@pytest.fixture
+def profile_key_metric_with_decimal_display_format(profile, indicatordata, subcategory):
+    FEMALE_GROUP_INDEX = 1
+    indicator = indicatordata[0].indicator
+    return ProfileKeyMetricsFactory(
+        profile=profile, variable=indicator, subindicator=FEMALE_GROUP_INDEX,
+        subcategory=subcategory, display_format="decimal",
+    )
 
 @pytest.mark.django_db
 class TestAbsoluteValue:
@@ -169,3 +179,15 @@ def test_sibling_not_none(profile_key_metric, geography, other_geographies, vers
     with patch.object(geography, "get_version_siblings", side_effect=lambda _version: other_geographies):
         sibling_data = sibling(profile_key_metric, geography, version)
         assert sibling_data != None
+
+@pytest.mark.django_db
+def test_data_format(profile_highlight):
+    expected_value = 'percentage'
+    actual_value = profile_highlight.display_format;
+    assert expected_value == actual_value
+
+@pytest.mark.django_db
+def test_data_format_with_decimal_display_format(profile_key_metric_with_decimal_display_format):
+    expected_value = 'decimal'
+    actual_value = profile_key_metric_with_decimal_display_format.display_format;
+    assert expected_value == actual_value

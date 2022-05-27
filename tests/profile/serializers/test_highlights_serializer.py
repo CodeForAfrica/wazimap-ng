@@ -11,6 +11,15 @@ def profile_highlight_without_data(profile, indicator):
         profile=profile, indicator=indicator, subindicator=FEMALE_GROUP_INDEX
     )
 
+@pytest.fixture
+def profile_highlight_with_decimal_display_format(profile, indicatordata):
+    FEMALE_GROUP_INDEX = 1
+    indicator = indicatordata[0].indicator
+    return ProfileHighlightFactory(
+        profile=profile, indicator=indicator, subindicator=FEMALE_GROUP_INDEX,
+        display_format='decimal',
+    );
+
 @pytest.mark.django_db
 def test_absolute_value(profile_highlight, indicatordata_json, geography, version):
     expected_value = sum(el["count"] for el in indicatordata_json if el["gender"] == "female")
@@ -61,3 +70,15 @@ def test_sibling_without_indicatordata(profile_highlight_without_data, version, 
         expected_value = None
         actual_value = sibling(profile_highlight_without_data, geography, version)
         assert expected_value == actual_value
+
+@pytest.mark.django_db
+def test_data_format(profile_highlight):
+    expected_value = 'percentage'
+    actual_value = profile_highlight.display_format;
+    assert expected_value == actual_value
+
+@pytest.mark.django_db
+def test_data_format_with_decimal_display_format(profile_highlight_with_decimal_display_format):
+    expected_value = 'decimal'
+    actual_value = profile_highlight_with_decimal_display_format.display_format;
+    assert expected_value == actual_value
