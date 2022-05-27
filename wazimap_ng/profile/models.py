@@ -6,7 +6,7 @@ from tinymce.models import HTMLField
 from wazimap_ng.datasets.models import Indicator, GeographyHierarchy
 from wazimap_ng.general.models import BaseModel, SimpleHistory
 from wazimap_ng.config.common import (
-    DENOMINATOR_CHOICES, PERMISSION_TYPES, PI_CONTENT_TYPE, DISPLAY_FORMAT_CHOICES
+    DENOMINATOR_CHOICES, DISPLAY_FORMAT_CHOICES, PERMISSION_TYPES, PI_CONTENT_TYPE
 )
 
 class Profile(BaseModel, SimpleHistory):
