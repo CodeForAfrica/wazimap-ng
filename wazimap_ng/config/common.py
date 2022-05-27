@@ -337,6 +337,12 @@ DENOMINATOR_CHOICES = (
     ('sibling', 'Sibling'),
 )
 
+DISPLAY_FORMAT_CHOICES = (
+    ('absolute_value', 'Integer'),
+    ('decimal', 'Decimal'),
+    ('percentage', 'Percentage'),
+)
+
 PERMISSION_TYPES = (
     ('private', 'Private'),
     ('public', 'Public'),
