@@ -31,7 +31,7 @@ class ProfileHighlightAdmin(SortableAdminMixin, BaseAdminModel, HistoryAdmin):
             "fields": ("profile", "indicator")
         }),
         ("Profile fields", {
-          "fields": ("label", "subindicator", "denominator")
+          "fields": ("label", "subindicator", "denominator", "display_format")
         })
     )
     form = ProfileHighlightForm
