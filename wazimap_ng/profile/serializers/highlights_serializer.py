@@ -54,5 +54,11 @@ def HighlightsSerializer(profile, geography, version):
         val = method(highlight, geography, version)
 
         if val is not None:
-            highlights.append({"label": highlight.label, "value": val, "method": denominator})
+            highlights.append({
+                "label": highlight.label,
+                "value": val,
+                "value_display_format": highlight.display_format,
+                "method": denominator
+            })
+
     return highlights

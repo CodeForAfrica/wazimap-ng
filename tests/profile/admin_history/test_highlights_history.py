@@ -33,17 +33,19 @@ class TestProfileHighlightAdminHistory:
             "subindicator": profile_highlight.subindicator,
             "denominator": "absolute_value",
             "label": "new label",
+            "display_format": "absolute_value",
             "change_reason": "Changed Label",
         }
 
         res = client.post(url, data, follow=True)
         assert res.status_code == 200
 
-        assert profile_highlight.history.all().count() == 2
+        assert profile_highlight.history.count() == 2
         history = profile_highlight.history.first()
         assert history.history_user_id == superuser.id
         changed_data = json.loads(history.history_change_reason)
         assert changed_data["reason"] == "Changed Label"
         assert "label" in changed_data["changed_fields"]
+        assert "display_format" in changed_data["changed_fields"]
         assert "denominator" in changed_data["changed_fields"]
         assert history.history_type == "~"

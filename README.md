@@ -50,6 +50,7 @@ Local development is normally done inside docker-compose so that the supporting 
 Make docker-compose start the supporting services
 
     docker-compose run --rm web python wait_for_postgres.py
+    docker-compose run --rm web python manage.py collectstatic --no-input
     
 Migrate, load development data and start the app
 

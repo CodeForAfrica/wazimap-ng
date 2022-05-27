@@ -6,7 +6,7 @@ from tinymce.models import HTMLField
 from wazimap_ng.datasets.models import Indicator, GeographyHierarchy
 from wazimap_ng.general.models import BaseModel, SimpleHistory
 from wazimap_ng.config.common import (
-    DENOMINATOR_CHOICES, PERMISSION_TYPES, PI_CONTENT_TYPE
+    DENOMINATOR_CHOICES, DISPLAY_FORMAT_CHOICES, PERMISSION_TYPES, PI_CONTENT_TYPE
 )
 
 class Profile(BaseModel, SimpleHistory):
@@ -76,6 +76,7 @@ class ProfileKeyMetrics(BaseModel, SimpleHistory):
     subindicator = models.PositiveSmallIntegerField()
     denominator = models.CharField(choices=DENOMINATOR_CHOICES, max_length=32, help_text="Method for calculating the denominator that will normalise this value.")
     label = models.CharField(max_length=255, help_text="Text used for display to users.")
+    display_format = models.CharField(choices=DISPLAY_FORMAT_CHOICES, default="percentage", max_length=32, help_text="Method for displaying the value to the user.")
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     @property
@@ -96,6 +97,7 @@ class ProfileHighlight(BaseModel, SimpleHistory):
     subindicator = models.PositiveSmallIntegerField(null=True, blank=True)
     denominator = models.CharField(choices=DENOMINATOR_CHOICES, max_length=32, help_text="Method for calculating the denominator that will normalise this value.")
     label = models.CharField(max_length=255, null=False, blank=True, help_text="Label for the indicator displayed on the front-end")
+    display_format = models.CharField(choices=DISPLAY_FORMAT_CHOICES, default="percentage", max_length=32, help_text="Method for displaying the value to the user.")
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     def __str__(self):

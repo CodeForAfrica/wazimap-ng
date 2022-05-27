@@ -61,6 +61,7 @@ def MetricsSerializer(profile, geography, version):
                             "key_metrics": [{
                                 "label": profile_key_metric.label,
                                 "value": val,
+                                "value_display_format": profile_key_metric.display_format,
                                 "method": denominator,
                                 "metadata": {
                                     "description": profile_key_metric.variable.dataset.metadata.description,
