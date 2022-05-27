@@ -37,7 +37,7 @@ class ProfileKeyMetricsAdmin(SortableAdminMixin, BaseAdminModel, HistoryAdmin):
 
     help_texts = ["denominator", ]
 
-    fields = ["profile", "variable", "subindicator", "subcategory", "denominator", "label"]
+    fields = ["profile", "variable", "subindicator", "subcategory", "denominator", "label", "display_format"]
     search_fields = ("label", )
 
 
