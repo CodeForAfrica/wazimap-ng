@@ -19,17 +19,17 @@ from wazimap_ng.config.common import PERMISSION_TYPES
 from django_q.tasks import async_task
 
 class Command(BaseCommand):
-    help = 'Uploads datasets from a specified directory.'
+    help = "Uploads datasets from a specified directory."
 
     def add_arguments(self, parser):
-        parser.add_argument('profile_name', type=str, help="Name of profile as it exists in the database (case sensitive).")
-        parser.add_argument('version', type=str, help="Version.")
-        parser.add_argument('data_directory', type=str, help="Path to the directory containing files to be uploaded.")
+        parser.add_argument("profile_name", type=str, help="Name of profile as it exists in the database (case sensitive).")
+        parser.add_argument("version", type=str, help="Version.")
+        parser.add_argument("data_directory", type=str, help="Path to the directory containing files to be uploaded.")
 
     def load_file(self, profile, version, dataset_name, path):
         with atomic():
             # Defaults
-            permission_type = 'public'
+            permission_type = "public"
 
             dataset = Dataset.objects.create(profile=profile, version=version, name=dataset_name, permission_type=permission_type)
             df = DatasetFile.objects.create(name=dataset_name, dataset_id=dataset.pk, document=File(path.open("rb")))
@@ -52,18 +52,18 @@ class Command(BaseCommand):
         path = Path(data_directory)
 
         if not path.is_dir():
-            raise CommandError(f'Could not find data directory at {data_directory}')
+            raise CommandError(f"Could not find data directory at {data_directory}")
 
         try:
             profile = Profile.objects.get(name=profile_name)
             version = Version.objects.get(name=version)
 
             for file in path.glob('*.csv'):
-                file_name = file.stem  # Get the file name without the extension
-                parts = file_name.split('|')  # Split by '|'
+                file_name = file.stem
+                parts = file_name.split('|')
 
                 if len(parts) != 2:
-                    self.stdout.write(self.style.WARNING(f'Skipping file {file_name}: does not match expected format.'))
+                    self.stdout.write(self.style.WARNING(f"Skipping file {file_name}: does not match expected format."))
                     continue
 
                 dataset_name = f"{parts[0].strip()} | {parts[1].strip().replace('_', ' ')}"  # Format the dataset name
@@ -71,6 +71,6 @@ class Command(BaseCommand):
 
         except Profile.DoesNotExist:
             profiles = ", ".join(p.name for p in Profile.objects.all())
-            raise CommandError(f'Profile {profile_name} does not exist. The following profiles are available: {profiles}')
+            raise CommandError(f"Profile {profile_name} does not exist. The following profiles are available: {profiles}")
 
         self.stdout.write(f"All tasks submitted successfully.")
