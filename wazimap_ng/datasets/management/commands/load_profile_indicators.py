@@ -11,7 +11,7 @@ based on the "Annual Temperature" and "Temperature Variation" categories.
 
 from django.core.management.base import BaseCommand
 from wazimap_ng.datasets.models import Geography
-from wazimap_ng.profile.models import Profile, Indicator, IndicatorCategory, IndicatorSubcategory, ProfileIndicator
+from wazimap_ng.profile.models import ChoroplethMethod, Profile, Indicator, IndicatorCategory, IndicatorSubcategory, ProfileIndicator
 from django.db import transaction
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
@@ -35,6 +35,12 @@ class Command(BaseCommand):
             profile = Profile.objects.get(name=profile_name)
         except Profile.DoesNotExist:
             self.stdout.write(self.style.ERROR(f"Profile with name '{profile_name}' does not exist."))
+            return
+
+        try:
+            choropleth_method = ChoroplethMethod.objects.get(name=choropleth_method)
+        except ChoroplethMethod.DoesNotExist:
+            self.stdout.write(self.style.ERROR(f"ChoroplethMethod with name '{choropleth_method}' does not exist."))
             return
 
         annual_temp_category_name = "Annual Temperature"
