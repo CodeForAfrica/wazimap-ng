@@ -9,6 +9,7 @@ based on the "Annual Temperature" and "Temperature Variation" categories.
 
 """
 
+import json
 from django.core.management.base import BaseCommand
 from wazimap_ng.datasets.models import Geography
 from wazimap_ng.profile.models import ChoroplethMethod, Profile, Indicator, IndicatorCategory, IndicatorSubcategory, ProfileIndicator
@@ -16,6 +17,39 @@ from django.db import transaction
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 
+HEATMAP_CHART_CONFIG = {
+    "types": {
+        "Value": {
+            "formatting": ",.0f"
+        },
+        "Percentage": {
+            "maxX": 1,
+            "minX": 0,
+            "formatting": ".0%"
+        }
+    },
+    "xTicks": 6,
+    "chart_type": "heatmap",
+    "defaultType": "Value",
+    "disableToggle": True
+}
+
+LINE_CHART_CONFIG = {
+    "types": {
+        "Value": {
+            "formatting": ",.0f"
+        },
+        "Percentage": {
+            "maxX": 1,
+            "minX": 0,
+            "formatting": ".0%"
+        }
+    },
+    "xTicks": 6,
+    "chart_type": "line",
+    "defaultType": "Value",
+    "disableToggle": True
+}
 
 class Command(BaseCommand):
     help = 'Create ProfileIndicator objects for a profile'
@@ -55,6 +89,7 @@ class Command(BaseCommand):
             return
 
         profile_indicators_to_create = []
+        profile_indicators_to_update = []
 
         for indicator in indicators:
             try:
@@ -70,6 +105,8 @@ class Command(BaseCommand):
                         category=annual_category,
                         defaults={"description": "Annual Temperature Subcategory"}
                     )
+                    #Annual Temp - use heatmap chart
+                    chart_configuration = HEATMAP_CHART_CONFIG
                 elif "Variation" in indicator.name:
                     label = f"{geography_name} Decadal Temperature Variation"
                     subcategory, _ = IndicatorSubcategory.objects.get_or_create(
@@ -77,29 +114,42 @@ class Command(BaseCommand):
                         category=variation_category,
                         defaults={"description": "Decadal Temperature Variation Subcategory"}
                     )
+                    # Temp variations - use line chart
+                    chart_configuration = LINE_CHART_CONFIG
                 else:
                     self.stdout.write(self.style.WARNING(f"Skipping indicator {indicator.name}: Unrecognized type."))
                     continue
 
-                # Create the ProfileIndicator object
-                profile_indicator = ProfileIndicator(
-                    profile=profile,
-                    indicator=indicator,
-                    subcategory=subcategory,
-                    label=label,
-                    description=description,
-                    choropleth_method=choropleth_method
-                )
-                profile_indicators_to_create.append(profile_indicator)
+                try:
+                    profile_indicator = ProfileIndicator.objects.get(profile=profile, indicator=indicator)
+                    profile_indicator.chart_configuration = chart_configuration
+                    profile_indicators_to_update.append(profile_indicator)
+                except ProfileIndicator.DoesNotExist:
+                    # Create the ProfileIndicator object
+                    profile_indicator = ProfileIndicator(
+                        profile=profile,
+                        indicator=indicator,
+                        subcategory=subcategory,
+                        label=label,
+                        description=description,
+                        choropleth_method=choropleth_method,
+                        chart_configuration=chart_configuration
+                    )
+                    profile_indicators_to_create.append(profile_indicator)
 
             except Geography.DoesNotExist:
                 self.stdout.write(self.style.WARNING(f"Skipping indicator {indicator.name}: Geography code '{geography_code}' does not exist."))
             except ObjectDoesNotExist:
                 self.stdout.write(self.style.WARNING(f"Skipping indicator {indicator.name}: Subcategory does not exist."))
 
+        if profile_indicators_to_update:
+            ProfileIndicator.objects.bulk_update(profile_indicators_to_update, ['chart_configuration'])
+            self.stdout.write(self.style.SUCCESS(f"Successfully updated {len(profile_indicators_to_update)} profile indicators for profile '{profile_name}'."))
+
         if profile_indicators_to_create:
             ProfileIndicator.objects.bulk_create(profile_indicators_to_create)
             self.stdout.write(self.style.SUCCESS(f"Successfully created {len(profile_indicators_to_create)} profile indicators for profile '{profile_name}'."))
-        else:
-            self.stdout.write(self.style.WARNING(f"No profile indicators were created for profile '{profile_name}'."))
+
+        if not profile_indicators_to_create and not profile_indicators_to_update:
+            self.stdout.write(self.style.WARNING(f"No profile indicators were created or updated for profile '{profile_name}'."))
 
