@@ -31,8 +31,22 @@ class Command(BaseCommand):
             # Defaults
             permission_type = "public"
 
-            dataset = Dataset.objects.create(profile=profile, version=version, name=dataset_name, permission_type=permission_type)
-            df = DatasetFile.objects.create(name=dataset_name, dataset_id=dataset.pk, document=File(path.open("rb")))
+            # Try to get the existing Dataset or create a new one
+            dataset, created = Dataset.objects.get_or_create(
+                profile=profile,
+                version=version,
+                name=dataset_name,
+                defaults={"permission_type": permission_type},
+            )
+
+            if created:
+                df = DatasetFile.objects.create(name=dataset_name, dataset_id=dataset.pk, document=File(path.open("rb")))
+            else:
+                df, _ = DatasetFile.objects.update_or_create(
+                    dataset_id=dataset.pk,
+                    name=dataset_name,
+                    defaults={"document": File(path.open("rb"))}
+                )
 
             uuid = async_task(
                 "wazimap_ng.datasets.tasks.process_uploaded_file",
@@ -74,3 +88,4 @@ class Command(BaseCommand):
             raise CommandError(f"Profile {profile_name} does not exist. The following profiles are available: {profiles}")
 
         self.stdout.write(f"All tasks submitted successfully.")
+
