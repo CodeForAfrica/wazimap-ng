@@ -42,7 +42,9 @@ class Command(BaseCommand):
                     groups = [dataset.groups[0]] if dataset.groups else []
 
             if groups:
-                indicators_to_create.append(Indicator(dataset=dataset, name=dataset.name, groups=groups))
+                indicator_exists = Indicator.objects.filter(dataset=dataset, name=dataset.name).exists()
+                if not indicator_exists:
+                    indicators_to_create.append(Indicator(dataset=dataset, name=dataset.name, groups=groups))
 
         Indicator.objects.bulk_create(indicators_to_create)
         self.stdout.write(self.style.SUCCESS(f"Successfully created {len(indicators_to_create)} indicators."))
