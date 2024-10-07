@@ -11,12 +11,17 @@ from .custom_permissions import fk_queryset_filter, custom_permissions
 
 from .custom_permissions.queryset_filters import CustomQuerySet
 from .custom_permissions.fk_queryset_filter import CustomFKQuerySet
-from wazimap_ng.config.common import STAFF_GROUPS
+from wazimap_ng.constants import STAFF_GROUPS
 
 def get_user_group(user):
     return user.groups.all().exclude(
         name__in=STAFF_GROUPS
     ).first()
+
+def get_user_groups(user):
+    return user.groups.all().exclude(
+        name__in=STAFF_GROUPS
+    )
 
 def assign_perms_to_group(
     profile_name, obj, remove_previous_perms=False

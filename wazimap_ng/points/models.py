@@ -5,6 +5,8 @@ from django.contrib.postgres.fields import JSONField
 from django.core.validators import FileExtensionValidator
 from django.core.exceptions import ValidationError
 from tinymce.models import HTMLField
+from django.contrib.postgres.search import SearchVectorField
+from django.contrib.postgres.indexes import GinIndex
 
 import pandas as pd
 from io import BytesIO
@@ -12,7 +14,8 @@ from wazimap_ng.profile.models import Profile
 from django_q.models import Task
 from wazimap_ng import utils
 from wazimap_ng.general.models import BaseModel, SimpleHistory
-from wazimap_ng.config.common import PERMISSION_TYPES
+from wazimap_ng.constants import PERMISSION_TYPES
+
 from colorfield.fields import ColorField
 
 
@@ -22,10 +25,17 @@ def get_file_path(instance, filename):
 
 
 class Theme(BaseModel, SimpleHistory):
+    COLOR_PALETTE = [
+        ("#3a70ff", "theme-1"), ("#993aff", "theme-2"), ("#ad356d", "theme-3"),
+        ("#f04f4f", "theme-4"), ("#ff3a8c", "theme-5"), ("#ff893a", "theme-6"),
+        ("#e7bc20", "theme-7"), ("#48c555", "theme-8"), ("#2ccaad", "theme-9"),
+        ("#0a8286", "theme-10")
+    ]
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=30)
     icon = models.CharField(max_length=30, null=True, blank=True)
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
+    color = ColorField(default='#000000', samples=COLOR_PALETTE)
 
     def __str__(self):
         return f"{self.profile} | {self.name}"
@@ -60,9 +70,13 @@ class Location(BaseModel):
         null=True,
         blank=True
     )
+    content_search = SearchVectorField(null=True)
 
     def __str__(self):
         return "%s: %s" % (self.category, self.name)
+
+    class Meta:
+        indexes = [GinIndex(fields=["content_search"])]
 
 
 class ProfileCategory(BaseModel, SimpleHistory):
@@ -71,9 +85,7 @@ class ProfileCategory(BaseModel, SimpleHistory):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="collection")
     label = models.CharField(max_length=60, null=False, blank=True, help_text="Label for the category to be displayed on the front-end")
     description = HTMLField(blank=True)
-    icon = models.CharField(max_length=30, null=True, blank=True)
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
-    color = ColorField(blank=True)
     visible_tooltip_attributes = JSONField(default=list, null=True, blank=True)
     configuration = JSONField(default=dict, blank=True)
 
@@ -103,30 +115,3 @@ class CoordinateFile(BaseModel, SimpleHistory):
 
     def __str__(self):
         return self.name
-
-    def clean(self):
-        """
-        Clean points data
-        """
-        document_name = self.document.name
-        headers = []
-        try:
-            headers = pd.read_csv(
-                BytesIO(self.document.read()), nrows=1, dtype=str
-            ).columns.str.lower()
-        except pd.errors.ParserError as e:
-            raise ValidationError(
-                "Not able to parse passed file. Error while reading file: %s" % str(e)
-            )
-        except pd.errors.EmptyDataError as e:
-            raise ValidationError(
-                "File seems to be empty. Error while reading file: %s" % str(e)
-            )
-
-        required_headers = ["longitude", "latitude", "name"]
-
-        for required_header in required_headers:
-            if required_header not in headers:
-                raise ValidationError(
-                    "Invalid File passed. We were not able to find Required header : %s " % required_header.capitalize()
-                )
