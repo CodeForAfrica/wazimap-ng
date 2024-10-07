@@ -61,7 +61,7 @@ Migrate, load development data and start the app
 
 Run the tests
 
-    docker-compose run --rm -e DJANGO_CONFIGURATION=Test web pytest /app/tests
+    docker-compose run --rm -e DJANGO_Q_SYNC=true web pytest /app/tests
 
 Run Django manage commands inside docker-compose, e.g. create a superuser:
 
