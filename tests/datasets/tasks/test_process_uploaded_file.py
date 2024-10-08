@@ -21,18 +21,22 @@ def create_datasetfile(file_data, encoding, header, dataset_id):
     csv_file = SimpleUploadedFile(
         name="test.csv", content=content, content_type='text/csv'
     )
-    return DatasetFileFactory(
+    file_obj = DatasetFileFactory(
         document=csv_file, dataset_id=dataset_id
     )
+    file_obj.full_clean()
+    return file_obj
 
 good_data = [
     ["GEOCODE_1", "F1_value_1", "F2_value_1", 111],
     ["GEOCODE_2", "F1_value_2", "F2_value_2", 222],
+    ["GEOCODE_2", "F1_value_3", "F2_value_3", -333],
 ]
 
 data_with_different_case = [
     ["GEOCODE_1", "f1_VALue_1", "F2_value_1", 111],
     ["GEOCODE_2", "F1_value_2", "f2_valUE_2", 222],
+    ["GEOCODE_2", "F1_VALUE_3", "f2_VALUE_3", -333],
 ]
 
 data_with_different_encodings = [
@@ -69,7 +73,6 @@ class TestUploadFile:
 
         process_csv(dataset, datasetfile.document.open("rb"))
         datasetdata = dataset.datasetdata_set.all()
-
         assert len(datasetdata) == len(csv_data)
 
         for dd, ed in zip(datasetdata, csv_data):

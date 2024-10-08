@@ -5,11 +5,12 @@ from collections import defaultdict
 from django.views.decorators.http import condition
 from django.utils.decorators import method_decorator
 from django.http import Http404
-from django.db.models import Count
+from django.db.models import Count, Q, F
 from django.forms.models import model_to_dict
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import get_object_or_404
+from django.contrib.postgres.search import SearchQuery
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -20,6 +21,9 @@ from wazimap_ng.profile.models import Profile
 from wazimap_ng.datasets.models import Geography
 from wazimap_ng.points.services.locations import get_locations
 from wazimap_ng.general.serializers import MetaDataSerializer
+
+from django.contrib.gis.geos import Point
+from django.contrib.gis.db.models.functions import Distance
 
 from . import models
 from . import serializers
@@ -40,7 +44,6 @@ class CategoryList(generics.ListAPIView):
             profile = Profile.objects.get(id=profile_id)
             queryset = queryset.filter(profile=profile_id)
 
-
         serializer = self.get_serializer_class()(queryset, many=True)
         data = serializer.data
 
@@ -54,6 +57,7 @@ class LocationList(generics.ListAPIView):
 
     def list(self, request, profile_id, profile_category_id=None, geography_code=None):
         try:
+            search_terms = request.GET.getlist('q', [])
             profile = Profile.objects.get(id=profile_id)
             profile_category = models.ProfileCategory.objects.get(
                 id=profile_category_id, profile_id=profile_id
@@ -66,6 +70,7 @@ class LocationList(generics.ListAPIView):
                 self.get_queryset(), profile, profile_category.category,
                 geography_code, version_name
             )
+            queryset = text_search(queryset, search_terms)
             serializer = self.get_serializer(queryset, many=True)
             data = serializer.data
             return Response(data)
@@ -77,24 +82,34 @@ class LocationList(generics.ListAPIView):
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
+
+def text_search(qs, search_terms):
+    query = Q()
+    for term in search_terms:
+        if term.strip():
+            search_query = SearchQuery(term.strip())
+            query &= Q(Q(content_search=search_query) | Q(content_search__icontains=term.strip()))
+    return qs.filter(query)
+
+
 def boundary_point_count_helper(profile, geography, version):
     boundary = geography.geographyboundary_set.filter(version=version).first()
     locations = models.Location.objects.filter(coordinates__within=boundary.geom)
     location_count = (
         locations
-            .filter(category__profilecategory__profile=profile)
-            .values(
-                "category__profilecategory__id", "category__profilecategory__label",
-                "category__profilecategory__color",
-                "category__profilecategory__order",
-                "category__profilecategory__theme__name",
-                "category__profilecategory__theme__icon",
-                "category__profilecategory__theme__id",
-                "category__profilecategory__theme__order",
-                "category__metadata__source", "category__metadata__description",
-                "category__metadata__licence"
-            )
-            .annotate(count_category=Count("category"))
+        .filter(category__profilecategory__profile=profile)
+        .values(
+            "category__profilecategory__id", "category__profilecategory__label",
+            "category__profilecategory__order",
+            "category__profilecategory__theme__name",
+            "category__profilecategory__theme__icon",
+            "category__profilecategory__theme__color",
+            "category__profilecategory__theme__id",
+            "category__profilecategory__theme__order",
+            "category__metadata__source", "category__metadata__description",
+            "category__metadata__licence"
+        )
+        .annotate(count_category=Count("category"))
     )
 
     theme_dict = {}
@@ -108,6 +123,7 @@ def boundary_point_count_helper(profile, geography, version):
                 "name": lc["category__profilecategory__theme__name"],
                 "id": lc["category__profilecategory__theme__id"],
                 "icon": lc["category__profilecategory__theme__icon"],
+                "color": lc["category__profilecategory__theme__color"],
                 "order": lc["category__profilecategory__theme__order"],
                 "subthemes": []
             }
@@ -118,7 +134,6 @@ def boundary_point_count_helper(profile, geography, version):
             "label": lc["category__profilecategory__label"],
             "id": lc["category__profilecategory__id"],
             "count": lc["count_category"],
-            "color": lc["category__profilecategory__color"],
             "order": lc["category__profilecategory__order"],
             "metadata": {
                 "source": lc["category__metadata__source"],
@@ -200,3 +215,33 @@ class GeoLocationList(generics.ListAPIView):
         except ObjectDoesNotExist as e:
             logger.exception(e)
             raise Http404
+
+
+class LocationListByDistance(generics.ListAPIView):
+    queryset = models.Location.objects.all()
+    serializer_class = serializers.LocationThemeSerializer
+
+    def list(self, request, profile_id):
+        search_terms = request.GET.getlist('q', [])
+        lat = float(request.GET.get('lat', 0))
+        long = float(request.GET.get('long', 0))
+        queryset = self.queryset.filter(
+            category__profilecategory__theme__profile_id=profile_id
+        )
+        queryset = text_search(queryset, search_terms)
+        reference_point = Point(long, lat, srid=4326)
+        queryset = queryset.annotate(
+            distance=Distance('coordinates', reference_point),
+            icon=F('category__profilecategory__theme__icon'),
+            theme_id=F('category__profilecategory__theme__id'),
+            theme_name=F('category__profilecategory__theme__name'),
+            color=F('category__profilecategory__theme__color'),
+            profile_category_id=F('category__profilecategory__id'),
+            profile_category_label=F('category__profilecategory__label'),
+            profile_id=F('category__profilecategory__theme__profile_id')
+        ).order_by('distance')
+
+        queryset = self.paginate_queryset(queryset)
+        serializer = self.get_serializer(queryset, many=True)
+        data = serializer.data
+        return Response(data)

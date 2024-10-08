@@ -5,9 +5,10 @@ from tinymce.models import HTMLField
 
 from wazimap_ng.datasets.models import Indicator, GeographyHierarchy
 from wazimap_ng.general.models import BaseModel, SimpleHistory
-from wazimap_ng.config.common import (
-    DENOMINATOR_CHOICES, DISPLAY_FORMAT_CHOICES, PERMISSION_TYPES, PI_CONTENT_TYPE
+from wazimap_ng.constants import (
+    DENOMINATOR_CHOICES, DISPLAY_FORMAT_CHOICES, PERMISSION_TYPES, PI_CONTENT_TYPE, PI_CHART_TYPE, PI_CHOROPLETH_RANGE_TYPE
 )
+
 
 class Profile(BaseModel, SimpleHistory):
     name = models.CharField(max_length=50)
@@ -23,6 +24,7 @@ class Profile(BaseModel, SimpleHistory):
     class Meta:
         ordering = ["id"]
 
+
 class Logo(BaseModel, SimpleHistory):
     profile = models.OneToOneField(Profile, null=False, on_delete=models.CASCADE)
     logo = models.ImageField(upload_to="logos/")
@@ -31,13 +33,13 @@ class Logo(BaseModel, SimpleHistory):
     def __str__(self):
         return f"{self.logo}"
 
+
 class ChoroplethMethod(BaseModel):
     name = models.CharField(max_length=30, blank=False)
     description = models.TextField(max_length=255)
 
     def __str__(self):
         return f"{self.name}"
-
 
 
 class IndicatorCategory(BaseModel, SimpleHistory):
@@ -68,13 +70,16 @@ class IndicatorSubcategory(BaseModel, SimpleHistory):
         verbose_name_plural = "Indicator Subcategories"
         ordering = ["order"]
 
+
 class ProfileKeyMetrics(BaseModel, SimpleHistory):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE,
+                                help_text="The profile to which this key metric belongs")
     variable = models.ForeignKey(Indicator, on_delete=models.CASCADE, )
     subcategory = models.ForeignKey(IndicatorSubcategory, on_delete=models.CASCADE)
     # TODO using an integer here is brittle. The order of the subindicators may change. Should rather use the final value.
     subindicator = models.PositiveSmallIntegerField()
-    denominator = models.CharField(choices=DENOMINATOR_CHOICES, max_length=32, help_text="Method for calculating the denominator that will normalise this value.")
+    denominator = models.CharField(choices=DENOMINATOR_CHOICES, max_length=32,
+                                   help_text="Method for calculating the denominator that will normalise this value.")
     label = models.CharField(max_length=255, help_text="Text used for display to users.")
     display_format = models.CharField(choices=DISPLAY_FORMAT_CHOICES, default="percentage", max_length=32, help_text="Method for displaying the value to the user.")
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
@@ -82,7 +87,7 @@ class ProfileKeyMetrics(BaseModel, SimpleHistory):
     @property
     def indicator(self):
         return self.variable
-    
+
     def __str__(self):
         return f"{self.label}"
 
@@ -90,37 +95,48 @@ class ProfileKeyMetrics(BaseModel, SimpleHistory):
         ordering = ["order"]
         verbose_name_plural = "Profile key metrics"
 
+
 class ProfileHighlight(BaseModel, SimpleHistory):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    indicator = models.ForeignKey(Indicator, on_delete=models.CASCADE, help_text="Indicator on which this highlight is based on.", verbose_name="variable")
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE,
+                                help_text="The profile to which this profile highlight belongs")
+    indicator = models.ForeignKey(Indicator, on_delete=models.CASCADE,
+                                  help_text="The variable on which this highlight is based on.", verbose_name="variable")
     # TODO using an integer here is brittle. The order of the subindicators may change. Should rather use the final value.
     subindicator = models.PositiveSmallIntegerField(null=True, blank=True)
-    denominator = models.CharField(choices=DENOMINATOR_CHOICES, max_length=32, help_text="Method for calculating the denominator that will normalise this value.")
-    label = models.CharField(max_length=255, null=False, blank=True, help_text="Label for the indicator displayed on the front-end")
-    display_format = models.CharField(choices=DISPLAY_FORMAT_CHOICES, default="percentage", max_length=32, help_text="Method for displaying the value to the user.")
+    denominator = models.CharField(choices=DENOMINATOR_CHOICES, max_length=32,
+                                   help_text="Method for calculating the denominator that will normalise this value.")
+    label = models.CharField(max_length=255, null=False, blank=True,
+                             help_text="Label for the profile highlight displayed on the front-end")
+    display_format = models.CharField(choices=DISPLAY_FORMAT_CHOICES, 
+                                      default="percentage", max_length=32, 
+                                      help_text="Method for displaying the value to the user.")
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     def __str__(self):
         return f"Highlight: {self.label}"
-        
+
     class Meta:
         ordering = ["order"]
 
 
 class ProfileIndicator(BaseModel, SimpleHistory):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE,
+                                help_text="The profile to which this profile indicator belongs")
     indicator = models.ForeignKey(
-        Indicator, on_delete=models.CASCADE, help_text="Indicator on which this indicator is based on.", verbose_name="variable"
+        Indicator, on_delete=models.CASCADE, verbose_name="variable"
     )
     subcategory = models.ForeignKey(IndicatorSubcategory, on_delete=models.CASCADE)
-    label = models.CharField(max_length=255, null=False, blank=True, help_text="Label for the indicator displayed on the front-end")
-    description = HTMLField(blank=True)
+    label = models.CharField(max_length=255, null=False, blank=True,
+                             help_text="Label for the indicator displayed on the front-end")
+    description = HTMLField(blank=True, help_text="Use this to help your users interpret the indicator effectively")
     subindicators = JSONField(default=list, blank=True)
     choropleth_method = models.ForeignKey(ChoroplethMethod, null=False, on_delete=models.CASCADE)
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
     chart_configuration = JSONField(default=dict, blank=True)
     content_type = models.CharField(choices=PI_CONTENT_TYPE, max_length=32, default="indicator")
-    
+    chart_type = models.CharField(choices=PI_CHART_TYPE, max_length=32, default="bar")
+    choropleth_range = models.CharField(choices=PI_CHOROPLETH_RANGE_TYPE, max_length=32, default="by_subindicator")
+    enable_linear_scrubber = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.profile.name} -> {self.label}"

@@ -2,12 +2,27 @@ from rest_framework import serializers
 
 from .. import models
 
-class IndicatorSubcategorySerializer(serializers.ModelSerializer):
 
-  class Meta:
-    model = models.IndicatorSubcategory
-    depth = 2
-    fields = ["id", "name", "description"]
+class ProfileIndicatorSerializer(serializers.ModelSerializer):
+    groups = serializers.SerializerMethodField(source="get_groups")
+
+    def get_groups(self, obj):
+        return obj.indicator.dataset.group_set.values("name", "subindicators")
+
+    class Meta:
+        model = models.ProfileIndicator
+        depth = 2
+        fields = ["id", "label", "groups"]
+
+
+class IndicatorSubcategorySerializer(serializers.ModelSerializer):
+    indicators = ProfileIndicatorSerializer(source="profileindicator_set", many=True)
+
+    class Meta:
+        model = models.IndicatorSubcategory
+        depth = 2
+        fields = ["id", "name", "description", "indicators"]
+
 
 class IndicatorCategorySerializer(serializers.ModelSerializer):
     subcategories = serializers.SerializerMethodField()
@@ -17,4 +32,4 @@ class IndicatorCategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.IndicatorCategory
-        exclude = ["profile"]
+        exclude = ["profile", "created", "updated"]
