@@ -36,5 +36,5 @@ class TestProfileHighlightAdmin:
         base_fields = list(ma.get_form(mocked_request, profile_highlight).base_fields)
 
         assert base_fields == [
-            "label", "indicator", "subindicator", "denominator", "change_reason"
+            "label", "indicator", "subindicator", "denominator", "display_format", "change_reason"
         ]

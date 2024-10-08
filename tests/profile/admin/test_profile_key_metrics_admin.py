@@ -38,5 +38,5 @@ class TestProfileKeyMetricsAdmin:
         base_fields = list(ma.get_form(mocked_request, profile_key_metric).base_fields)
 
         assert base_fields == [
-            "subcategory", "label", "variable", "subindicator", "denominator", "change_reason"
+            "subcategory", "label", "variable", "subindicator", "denominator", "display_format", "change_reason"
         ]

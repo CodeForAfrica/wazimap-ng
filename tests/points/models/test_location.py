@@ -22,4 +22,4 @@ class TestLocation:
         )
         assert Location.objects.all().count() == 1
         location = Location.objects.all().first()
-        assert location.content_search == "'attribute1':3A 'attribute2':7A 'key':2A,6A 'test':1A 'valu':4A,8A 'value1':5A 'value2':9A"
+        assert location.content_search == "'attribute1':3A 'attribute2':7A 'key':2A,6A 'test':1A 'value':4A,8A 'value1':5A 'value2':9A"

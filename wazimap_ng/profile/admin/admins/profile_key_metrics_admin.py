@@ -29,7 +29,7 @@ class ProfileKeyMetricsAdmin(SortableAdminMixin, BaseAdminModel, HistoryAdmin):
 
     fieldsets = (
         ("Profile fields", {
-            "fields": ("profile", "subcategory", "label", "variable", "subindicator", "denominator")
+            "fields": ("profile", "subcategory", "label", "variable", "subindicator", "denominator", "display_format")
         }),
     )
     form = ProfileKeyMetricsForm
