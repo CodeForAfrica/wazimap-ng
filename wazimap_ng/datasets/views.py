@@ -48,11 +48,13 @@ class DatasetList(generics.ListCreateAPIView):
         file_obj = request.data.get('file', None)
         if file_obj:
             try:
-                datasetfile_obj = models.DatasetFile.objects.create(
+                datasetfile_obj = models.DatasetFile(
                     name=dataset_obj.name,
                     document=file_obj,
                     dataset_id=dataset_obj.id
                 )
+                datasetfile_obj.full_clean()
+                datasetfile_obj.save()
             except Exception as err:
                 return Response({
                     'detail': ', '.join(err.messages)
@@ -212,7 +214,10 @@ def search_geography(request, profile_id):
 
     q = request.GET.get("q", "")
 
-    geographies = models.Geography.objects.filter(geographyboundary__version=version).search(q)[0:max_results]
+    geographies = models.Geography.objects.filter(
+        geographyboundary__version=version,
+        name__icontains=q
+    )[0:max_results]
 
     def sort_key(x):
         exact_match = x.name.lower() == q.lower()

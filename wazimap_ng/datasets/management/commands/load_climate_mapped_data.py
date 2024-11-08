@@ -14,7 +14,7 @@ from pathlib import Path
 
 from wazimap_ng.datasets.models import Dataset, DatasetFile, Version
 from wazimap_ng.profile.models import Profile
-from wazimap_ng.config.common import PERMISSION_TYPES
+from wazimap_ng.constants import PERMISSION_TYPES
 
 from django_q.tasks import async_task
 

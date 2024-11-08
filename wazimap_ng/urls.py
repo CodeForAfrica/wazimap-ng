@@ -15,8 +15,9 @@ from .profile import views as profile_views
 from .boundaries import views as boundaries_views
 from .general import views as general_views
 from .cache import cache_headers as cache
+from django.views.decorators.cache import cache_page
 
-from wazimap_ng.general.views import logout_view, notifications_view, task_status
+from wazimap_ng.general.views import notifications_view, task_status
 
 
 def trigger_error(request):
@@ -73,6 +74,11 @@ urlpatterns = [
         name="profile-detail",
     ),
     path(
+        "api/v1/profiles/<int:profile_id>/versions/",
+        cache(profile_views.profile_versions),
+        name="profile-versions",
+    ),
+    path(
         "api/v1/profiles/<int:profile_id>/categories/",
         cache(profile_views.ProfileCategoriesList.as_view()),
         name="profile-categories",
@@ -102,16 +108,23 @@ urlpatterns = [
         profile_views.profile_geography_indicator_data,
         name="profile-geography-indicator-data",
     ),
+    path(
+        "api/v1/profile/<int:profile_id>/geography/<str:geography_code>/indicator/<int:profile_indicator_id>/child_data/",
+        profile_views.profile_geography_indicator_child_data,
+        name="profile-geography-indicator-child-data",
+    ),
     path("api/v1/geography/search/<str:profile_id>/", cache(dataset_views.search_geography)),
     path("api/v1/geography/ancestors/<str:geography_code>/<str:version>/", cache(dataset_views.geography_ancestors), name="geography-ancestors"),
 
     path("api/v1/profile/<int:profile_id>/points/themes/", cache(points_views.ThemeList.as_view()), name="points-themes"),
     path("api/v1/profile/<int:profile_id>/points/themes/categories/", cache(points_views.ProfileCategoryList.as_view())),
     path("api/v1/profile/<int:profile_id>/points/category/<int:profile_category_id>/points/", cache(points_views.LocationList.as_view()), name="category-points"),
-    path("api/v1/profile/<int:profile_id>/points/geography/<str:geography_code>/points/", cache(points_views.GeoLocationList.as_view()), name="geography-points"),
+    path("api/v1/profile/<int:profile_id>/points/geography/<str:geography_code>/points/", cache_page(60*60)(points_views.GeoLocationList.as_view()), name="geography-points"),
     path("api/v1/profile/<int:profile_id>/points/category/<int:profile_category_id>/geography/<str:geography_code>/points/", cache(points_views.LocationList.as_view()), name="category-points-geography"),
     path("api/v1/profile/<int:profile_id>/points/profile_categories/", cache(points_views.ProfileCategoryList.as_view()), name="profile-category"),
     path("api/v1/profile/<int:profile_id>/points/theme/<int:theme_id>/profile_categories/", cache(points_views.ProfileCategoryList.as_view()), name="profile-category-theme"),
+
+    path("api/v1/profile/<int:profile_id>/points/points_by_distance/", cache(points_views.LocationListByDistance.as_view()), name="points-by-distance"),
 
     re_path(r"^$", RedirectView.as_view(url="/api/v1/datasets/", permanent=False)),
     path("api/v1/data/points/collections/", cache(points_views.CategoryList.as_view())),
@@ -159,8 +172,19 @@ urlpatterns = [
     ),
     path("api/v1/tasks/<str:task_id>/", task_status, name="task_status"),
     path('sentry-debug/', trigger_error),
+    path(
+        "api/v1/children-indicators/profile/<int:profile_id>/geography/<str:geography_code>/",
+        cache(general_views.indicator_data_for_children),
+        name="children-indicators"
+    ),
+    path("api/v1/profile/<int:profile_id>/geography/<str:geography_code>/profile_indicator_summary/",
+        cache(general_views.consolidated_profile_summary),
+        name="profile-geo-indicator-summary"
+    ),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = 'Wazimap Administration'
 
 if settings.DEBUG:
     import debug_toolbar

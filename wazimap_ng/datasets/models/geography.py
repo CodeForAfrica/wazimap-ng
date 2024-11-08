@@ -98,13 +98,21 @@ class Geography(MP_Node, BaseModel):
 
 class GeographyHierarchy(BaseModel, SimpleHistory):
     name = models.CharField(max_length=50)
-    root_geography = models.ForeignKey(Geography, null=False, on_delete=models.CASCADE, unique=True)
+    root_geography = models.ForeignKey(Geography, null=False, on_delete=models.CASCADE)
     description = HTMLField(blank=True)
     configuration = JSONField(default=dict, blank=True)
 
     @property
     def default_version(self):
         return self.configuration.get("default_version")
+
+    @property
+    def get_version_names(self):
+        versions = self.configuration.get("versions", [])
+        default_version = self.configuration.get("default_version", "")
+        if default_version and default_version not in versions:
+            versions.append(default_version)
+        return versions
 
     def help_text(self):
         return f"{self.name} : {self.description}"

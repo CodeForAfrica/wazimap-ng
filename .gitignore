@@ -1,3 +1,5 @@
+.env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -124,3 +126,5 @@ media/
 
 Dockerfile
 .idea
+
+node_modules/

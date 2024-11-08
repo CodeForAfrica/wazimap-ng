@@ -1,0 +1,4940 @@
+{
+  "panels": {
+    "rich_data": {
+      "visible": true
+    },
+    "point_data": {
+      "visible": false
+    },
+    "data_explorer": {
+      "visible": true
+    }
+  },
+  "map_type": "choropleth",
+  "choropleth": {
+    "opacity": 0.7,
+    "zero_color": "#eeeeee",
+    "border_color": "#EBEBEB",
+    "opacity_over": 0.8,
+    "negative_color_range": [
+      "#FEA502",
+      "#FFAA54",
+      "#FD928E",
+      "#DFB494",
+      "#9BFAFA",
+      "#64F9F9",
+      "#01F8F8"
+    ],
+    "positive_color_range": [
+      "#021AFE",
+      "#5455FF",
+      "#928EFD",
+      "#B494DF",
+      "#FA9B9B",
+      "#F96264",
+      "#F80701"
+    ]
+  },
+  "default_panel": "rich_data",
+  "leafletOptions": {
+    "maxZoom": 2
+  },
+  "featured_locations": [
+    {
+      "code": "AF",
+      "name": "Africa",
+      "level": "Continent"
+    },
+    {
+      "code": "DJ",
+      "name": "Djibouti",
+      "count": 28.6,
+      "level": "Country"
+    },
+    {
+      "code": "DJ.AS",
+      "name": "Ali Sabieh",
+      "count": 28.11,
+      "level": "Region"
+    },
+    {
+      "code": "DJ.DK",
+      "name": "Dikhil",
+      "count": 28.58,
+      "level": "Region"
+    },
+    {
+      "code": "DJ.OB",
+      "name": "Obock",
+      "count": 29.42,
+      "level": "Region"
+    },
+    {
+      "code": "DJ.TA",
+      "name": "Tadjourah",
+      "count": 28.19,
+      "level": "Region"
+    },
+    {
+      "code": "DJ.DB",
+      "name": "Djiboutii",
+      "count": 28.89,
+      "level": "Region"
+    },
+    {
+      "code": "KE",
+      "name": "Kenya",
+      "count": 25.22,
+      "level": "Country"
+    },
+    {
+      "code": "KE.BA",
+      "name": "Baringo",
+      "count": 21.32,
+      "level": "County"
+    },
+    {
+      "code": "KE.BO",
+      "name": "Bomet",
+      "count": 17.9,
+      "level": "County"
+    },
+    {
+      "code": "KE.BN",
+      "name": "Bungoma",
+      "count": 20.12,
+      "level": "County"
+    },
+    {
+      "code": "KE.BS",
+      "name": "Busia",
+      "count": 22.89,
+      "level": "County"
+    },
+    {
+      "code": "KE.EB",
+      "name": "Elgeyo-Marakwet",
+      "count": 21.85,
+      "level": "County"
+    },
+    {
+      "code": "KE.EM",
+      "name": "Embu",
+      "count": 20.58,
+      "level": "County"
+    },
+    {
+      "code": "KE.GA",
+      "name": "Garissa",
+      "count": 28.51,
+      "level": "County"
+    },
+    {
+      "code": "KE.HB",
+      "name": "Homa Bay",
+      "count": 22.47,
+      "level": "County"
+    },
+    {
+      "code": "KE.IS",
+      "name": "Isiolo",
+      "count": 27.15,
+      "level": "County"
+    },
+    {
+      "code": "KE.KJ",
+      "name": "Kajiado",
+      "count": 21.8,
+      "level": "County"
+    },
+    {
+      "code": "KE.KK",
+      "name": "Kakamega",
+      "count": 21.11,
+      "level": "County"
+    },
+    {
+      "code": "KE.KR",
+      "name": "Kericho",
+      "count": 18.28,
+      "level": "County"
+    },
+    {
+      "code": "KE.KB",
+      "name": "Kiambu",
+      "count": 18.07,
+      "level": "County"
+    },
+    {
+      "code": "KE.KF",
+      "name": "Kilifi",
+      "count": 26.72,
+      "level": "County"
+    },
+    {
+      "code": "KE.KY",
+      "name": "Kirinyaga",
+      "count": 18.18,
+      "level": "County"
+    },
+    {
+      "code": "KE.KI",
+      "name": "Kisii",
+      "count": 19.61,
+      "level": "County"
+    },
+    {
+      "code": "KE.KU",
+      "name": "Kisumu",
+      "count": 22,
+      "level": "County"
+    },
+    {
+      "code": "KE.KT",
+      "name": "Kitui",
+      "count": 25.42,
+      "level": "County"
+    },
+    {
+      "code": "KE.KW",
+      "name": "Kwale",
+      "count": 26.02,
+      "level": "County"
+    },
+    {
+      "code": "KE.LK",
+      "name": "Laikipia",
+      "count": 17.87,
+      "level": "County"
+    },
+    {
+      "code": "KE.LM",
+      "name": "Lamu",
+      "count": 27.96,
+      "level": "County"
+    },
+    {
+      "code": "KE.MC",
+      "name": "Machakos",
+      "count": 21.23,
+      "level": "County"
+    },
+    {
+      "code": "KE.MK",
+      "name": "Makueni",
+      "count": 22.88,
+      "level": "County"
+    },
+    {
+      "code": "KE.MD",
+      "name": "Mandera",
+      "count": 27.11,
+      "level": "County"
+    },
+    {
+      "code": "KE.MB",
+      "name": "Marsabit",
+      "count": 27.13,
+      "level": "County"
+    },
+    {
+      "code": "KE.ME",
+      "name": "Meru",
+      "count": 21.34,
+      "level": "County"
+    },
+    {
+      "code": "KE.MG",
+      "name": "Migori",
+      "count": 21.62,
+      "level": "County"
+    },
+    {
+      "code": "KE.MM",
+      "name": "Mombasa",
+      "count": 26.75,
+      "level": "County"
+    },
+    {
+      "code": "KE.MU",
+      "name": "Murang'a",
+      "count": 18.57,
+      "level": "County"
+    },
+    {
+      "code": "KE.NB",
+      "name": "Nairobi",
+      "count": 19,
+      "level": "County"
+    },
+    {
+      "code": "KE.NK",
+      "name": "Nakuru",
+      "count": 15.67,
+      "level": "County"
+    },
+    {
+      "code": "KE.ND",
+      "name": "Nandi",
+      "count": 18.8,
+      "level": "County"
+    },
+    {
+      "code": "KE.NR",
+      "name": "Narok",
+      "count": 17.99,
+      "level": "County"
+    },
+    {
+      "code": "KE.NM",
+      "name": "Nyamira",
+      "count": 19.29,
+      "level": "County"
+    },
+    {
+      "code": "KE.NN",
+      "name": "Nyandarua",
+      "count": 15.38,
+      "level": "County"
+    },
+    {
+      "code": "KE.NI",
+      "name": "Nyeri",
+      "count": 14.58,
+      "level": "County"
+    },
+    {
+      "code": "KE.SA",
+      "name": "Samburu",
+      "count": 23.12,
+      "level": "County"
+    },
+    {
+      "code": "KE.SI",
+      "name": "Siaya",
+      "count": 23.08,
+      "level": "County"
+    },
+    {
+      "code": "KE.TT",
+      "name": "Taita Taveta",
+      "count": 24.14,
+      "level": "County"
+    },
+    {
+      "code": "KE.TR",
+      "name": "Tana River",
+      "count": 27.74,
+      "level": "County"
+    },
+    {
+      "code": "KE.NT",
+      "name": "Tharaka-Nithi",
+      "count": 22.87,
+      "level": "County"
+    },
+    {
+      "code": "KE.TN",
+      "name": "Trans Nzoia",
+      "count": 18.23,
+      "level": "County"
+    },
+    {
+      "code": "KE.TU",
+      "name": "Turkana",
+      "count": 28.02,
+      "level": "County"
+    },
+    {
+      "code": "KE.UG",
+      "name": "Uasin Gishu",
+      "count": 17.95,
+      "level": "County"
+    },
+    {
+      "code": "KE.VI",
+      "name": "Vihiga",
+      "count": 21.68,
+      "level": "County"
+    },
+    {
+      "code": "KE.WJ",
+      "name": "Wajir",
+      "count": 28.13,
+      "level": "County"
+    },
+    {
+      "code": "KE.WP",
+      "name": "West Pokot",
+      "count": 22.92,
+      "level": "County"
+    },
+    {
+      "code": "MW",
+      "name": "Malawi",
+      "count": 22.55,
+      "level": "Country"
+    },
+    {
+      "code": "MW.MW1",
+      "name": "Northern region",
+      "count": 21.15,
+      "level": "Region"
+    },
+    {
+      "code": "MW.MW2",
+      "name": "Central Region",
+      "count": 21.73,
+      "level": "Region"
+    },
+    {
+      "code": "MW.MW3",
+      "name": "Southern Region",
+      "count": 23.65,
+      "level": "Region"
+    },
+    {
+      "code": "MG",
+      "name": "Madagascar",
+      "count": 22.7,
+      "level": "Country"
+    },
+    {
+      "code": "MG.MG33",
+      "name": "Alaotra Mangoro",
+      "count": 20.8,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG22",
+      "name": "Amoron I Mania",
+      "count": 19.57,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG11",
+      "name": "Analamanga",
+      "count": 19.64,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG32",
+      "name": "Analanjirofo",
+      "count": 22.4,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG52",
+      "name": "Androy",
+      "count": 22.94,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG53",
+      "name": "Anosy",
+      "count": 21.28,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG51",
+      "name": "Atsimo Andrefana",
+      "count": 23.31,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG25",
+      "name": "Atsimo Atsinanana",
+      "count": 22.11,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG31",
+      "name": "Atsinanana",
+      "count": 22.35,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG43",
+      "name": "Betsiboka",
+      "count": 23.25,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG41",
+      "name": "Boeny",
+      "count": 26.26,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG14",
+      "name": "Bongolava",
+      "count": 21.48,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG71",
+      "name": "Diana",
+      "count": 24.12,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG21",
+      "name": "Haute Matsiatra",
+      "count": 20.15,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG24",
+      "name": "Ihorombe",
+      "count": 20.72,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG13",
+      "name": "Itasy",
+      "count": 19.18,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG44",
+      "name": "Melaky",
+      "count": 25.38,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG54",
+      "name": "Menabe",
+      "count": 24.44,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG72",
+      "name": "Sava",
+      "count": 23.31,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG42",
+      "name": "Sofia",
+      "count": 23.59,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG12",
+      "name": "Vakinankaratra Vatovavy Fitovinany",
+      "count": 18.82,
+      "level": "Region"
+    },
+    {
+      "code": "MG.MG23",
+      "name": "Vatovavy Fitovinany",
+      "count": 22.44,
+      "level": "Region"
+    },
+    {
+      "code": "BI",
+      "name": "Burundi",
+      "count": 20.43,
+      "level": "Country"
+    },
+    {
+      "code": "BI.BB",
+      "name": "Bubanza",
+      "count": 21.59,
+      "level": "Province"
+    },
+    {
+      "code": "BI.BM",
+      "name": "Bujumbura Mairie",
+      "count": 22.32,
+      "level": "Province"
+    },
+    {
+      "code": "BI.BU",
+      "name": "Bujumbura Rural",
+      "count": 21.42,
+      "level": "Province"
+    },
+    {
+      "code": "BI.BR",
+      "name": "Bururi",
+      "count": 20.09,
+      "level": "Province"
+    },
+    {
+      "code": "BI.CA",
+      "name": "Cankuzo",
+      "count": 21.13,
+      "level": "Province"
+    },
+    {
+      "code": "BI.CI",
+      "name": "Cibitoke",
+      "count": 19.73,
+      "level": "Province"
+    },
+    {
+      "code": "BI.GI",
+      "name": "Gitega",
+      "count": 18.84,
+      "level": "Province"
+    },
+    {
+      "code": "BI.KR",
+      "name": "Karuzi",
+      "count": 20.4,
+      "level": "Province"
+    },
+    {
+      "code": "BI.KY",
+      "name": "Kayanza",
+      "count": 19.2,
+      "level": "Province"
+    },
+    {
+      "code": "BI.KI",
+      "name": "Kirundo",
+      "count": 20.83,
+      "level": "Province"
+    },
+    {
+      "code": "BI.MA",
+      "name": "Makamba",
+      "count": 21.52,
+      "level": "Province"
+    },
+    {
+      "code": "BI.MV",
+      "name": "Muramvya",
+      "count": 18.88,
+      "level": "Province"
+    },
+    {
+      "code": "BI.MY",
+      "name": "Muyinga",
+      "count": 20.92,
+      "level": "Province"
+    },
+    {
+      "code": "BI.MW",
+      "name": "Mwaro",
+      "count": 18.44,
+      "level": "Province"
+    },
+    {
+      "code": "BI.NG",
+      "name": "Ngozi",
+      "count": 19.9,
+      "level": "Province"
+    },
+    {
+      "code": "BI.RT",
+      "name": "Rutana",
+      "count": 20.71,
+      "level": "Province"
+    },
+    {
+      "code": "BI.RY",
+      "name": "Ruyigi",
+      "count": 20.84,
+      "level": "Province"
+    },
+    {
+      "code": "ER",
+      "name": "Eritrea",
+      "count": 26.49,
+      "level": "Country"
+    },
+    {
+      "code": "ER.AN",
+      "name": "Anseba",
+      "count": 25.91,
+      "level": "Region"
+    },
+    {
+      "code": "ER.DU",
+      "name": "Debub",
+      "count": 20.84,
+      "level": "Region"
+    },
+    {
+      "code": "ER.DK",
+      "name": "Debubawi Keih Bahri",
+      "count": 29.24,
+      "level": "Region"
+    },
+    {
+      "code": "ER.GB",
+      "name": "Gash Barka",
+      "count": 26.7,
+      "level": "Region"
+    },
+    {
+      "code": "ER.MA",
+      "name": "Maekel",
+      "count": 19.51,
+      "level": "Region"
+    },
+    {
+      "code": "ER.SK",
+      "name": "Semenawi Keih Bahri",
+      "count": 26.64,
+      "level": "Region"
+    },
+    {
+      "code": "SO",
+      "name": "Somalia",
+      "count": 27.1,
+      "level": "Country"
+    },
+    {
+      "code": "SO.AW",
+      "name": "Awdal",
+      "count": 27.51,
+      "level": "Region"
+    },
+    {
+      "code": "SO.BK",
+      "name": "Bakool",
+      "count": 27.41,
+      "level": "Region"
+    },
+    {
+      "code": "SO.BR",
+      "name": "Bari",
+      "count": 26.61,
+      "level": "Region"
+    },
+    {
+      "code": "SO.BY",
+      "name": "Bay",
+      "count": 27.74,
+      "level": "Region"
+    },
+    {
+      "code": "SO.BN",
+      "name": "Banadir",
+      "count": 27.16,
+      "level": "Region"
+    },
+    {
+      "code": "SO.GA",
+      "name": "Galgaduud",
+      "count": 27.86,
+      "level": "Region"
+    },
+    {
+      "code": "SO.GE",
+      "name": "Gedo",
+      "count": 28.8,
+      "level": "Region"
+    },
+    {
+      "code": "SO.HI",
+      "name": "Hiraan",
+      "count": 27.72,
+      "level": "Region"
+    },
+    {
+      "code": "SO.JH",
+      "name": "Juba Hoose",
+      "count": 28.72,
+      "level": "Region"
+    },
+    {
+      "code": "SO.SH",
+      "name": "Shabelle Hoose",
+      "count": 27.78,
+      "level": "Region"
+    },
+    {
+      "code": "SO.JD",
+      "name": "Juba Dhexe",
+      "count": 28.63,
+      "level": "Region"
+    },
+    {
+      "code": "SO.SD",
+      "name": "Shabelle Dhexe",
+      "count": 27.31,
+      "level": "Region"
+    },
+    {
+      "code": "SO.MU",
+      "name": "Mudug",
+      "count": 27.74,
+      "level": "Region"
+    },
+    {
+      "code": "SO.NU",
+      "name": "Nugaal",
+      "count": 26.79,
+      "level": "Region"
+    },
+    {
+      "code": "SO.SA",
+      "name": "Sanaag",
+      "count": 24.73,
+      "level": "Region"
+    },
+    {
+      "code": "SO.SO",
+      "name": "Sool",
+      "count": 25.83,
+      "level": "Region"
+    },
+    {
+      "code": "SO.TO",
+      "name": "Togdheer",
+      "count": 24.85,
+      "level": "Region"
+    },
+    {
+      "code": "SO.WO",
+      "name": "Woqooyi Galbeed",
+      "count": 25.37,
+      "level": "Region"
+    },
+    {
+      "code": "TZ",
+      "name": "Tanzania",
+      "count": 22.9,
+      "level": "Country"
+    },
+    {
+      "code": "TZ.AS",
+      "name": "Arusha",
+      "count": 21.08,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.DS",
+      "name": "Dar-es-salaam",
+      "count": 26.39,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.DO",
+      "name": "Dodoma",
+      "count": 22.2,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.GE",
+      "name": "Geita",
+      "count": 22.89,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.IG",
+      "name": "Iringa",
+      "count": 21.59,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.KG",
+      "name": "Kagera",
+      "count": 21.54,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.PN",
+      "name": "Kaskazini Pemba",
+      "count": 26.71,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.ZN",
+      "name": "Kaskazini Unguja",
+      "count": 26.62,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.KA",
+      "name": "Katavi",
+      "count": 22.58,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.KM",
+      "name": "Kigoma",
+      "count": 22.81,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.KL",
+      "name": "Kilimanjaro",
+      "count": 21.62,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.PS",
+      "name": "Kusini Pemba",
+      "count": 26.71,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.ZS",
+      "name": "Kusini Unguja",
+      "count": 26.45,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.LI",
+      "name": "Lindi",
+      "count": 25.26,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.MY",
+      "name": "Manyara",
+      "count": 21.19,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.MA",
+      "name": "Mara",
+      "count": 22.23,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.MB",
+      "name": "Mbeya",
+      "count": 21.5,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.ZW",
+      "name": "Mjini Magharibi",
+      "count": 26.45,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.MO",
+      "name": "Morogoro",
+      "count": 24.73,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.MT",
+      "name": "Mtwara",
+      "count": 25.42,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.MZ",
+      "name": "Mwanza",
+      "count": 23.06,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.NJ",
+      "name": "Njombe",
+      "count": 21.24,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.PW",
+      "name": "Pwani",
+      "count": 26.29,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.RU",
+      "name": "Rukwa",
+      "count": 21.83,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.RV",
+      "name": "Ruvuma",
+      "count": 23.16,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.SY",
+      "name": "Shinyanga",
+      "count": 23.42,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.SI",
+      "name": "Simiyu",
+      "count": 22.23,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.SD",
+      "name": "Singida",
+      "count": 22.14,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.TB",
+      "name": "Tabora",
+      "count": 23.17,
+      "level": "Region"
+    },
+    {
+      "code": "TZ.TN",
+      "name": "Tanga",
+      "count": 24.31,
+      "level": "Region"
+    },
+    {
+      "code": "RW",
+      "name": "Rwanda",
+      "count": 19.14,
+      "level": "Country"
+    },
+    {
+      "code": "RW.ES",
+      "name": "East/Iburasirazuba",
+      "count": 20.18,
+      "level": "Province"
+    },
+    {
+      "code": "RW.KV",
+      "name": "Kigali City/Umujyi wa Kigali",
+      "count": 19.53,
+      "level": "Province"
+    },
+    {
+      "code": "RW.NO",
+      "name": "North/Amajyaruguru",
+      "count": 17.84,
+      "level": "Province"
+    },
+    {
+      "code": "RW.SU",
+      "name": "South/Amajyepfo",
+      "count": 19.15,
+      "level": "Province"
+    },
+    {
+      "code": "RW.OU",
+      "name": "West/Iburengerazuba",
+      "count": 18.12,
+      "level": "Province"
+    },
+    {
+      "code": "ET",
+      "name": "Ethiopia",
+      "count": 23.45,
+      "level": "Country"
+    },
+    {
+      "code": "ET.AA",
+      "name": "Addis Ababa",
+      "count": 17.04,
+      "level": "City"
+    },
+    {
+      "code": "ET.AF",
+      "name": "Afar",
+      "count": 27.74,
+      "level": "State"
+    },
+    {
+      "code": "ET.AM",
+      "name": "Amhara",
+      "count": 20.36,
+      "level": "State"
+    },
+    {
+      "code": "ET.BE",
+      "name": "Benishangul Gumz",
+      "count": 24.91,
+      "level": "State"
+    },
+    {
+      "code": "ET.DD",
+      "name": "Dire Dawa",
+      "count": 24.82,
+      "level": "City"
+    },
+    {
+      "code": "ET.GA",
+      "name": "Gambela",
+      "count": 27.35,
+      "level": "State"
+    },
+    {
+      "code": "ET.HA",
+      "name": "Harari",
+      "count": 20.78,
+      "level": "State"
+    },
+    {
+      "code": "ET.OR",
+      "name": "Oromia",
+      "count": 20.81,
+      "level": "State"
+    },
+    {
+      "code": "ET.SN",
+      "name": "SNNP",
+      "count": 22.13,
+      "level": "State"
+    },
+    {
+      "code": "ET.SO",
+      "name": "Somali",
+      "count": 26.43,
+      "level": "State"
+    },
+    {
+      "code": "ET.TI",
+      "name": "Tigray",
+      "count": 22.7,
+      "level": "State"
+    },
+    {
+      "code": "SS",
+      "name": "South Sudan",
+      "count": 27.55,
+      "level": "Country"
+    },
+    {
+      "code": "SS.BG",
+      "name": "Central Equatoria",
+      "count": 26.79,
+      "level": "State"
+    },
+    {
+      "code": "SS.EE",
+      "name": "Eastern Equatoria",
+      "count": 27.03,
+      "level": "State"
+    },
+    {
+      "code": "SS.WE",
+      "name": "Western Equatoria",
+      "count": 26.32,
+      "level": "State"
+    },
+    {
+      "code": "SS.JG",
+      "name": "Jonglei",
+      "count": 28.66,
+      "level": "State"
+    },
+    {
+      "code": "SS.EB",
+      "name": "Lakes",
+      "count": 27.98,
+      "level": "State"
+    },
+    {
+      "code": "SS.NB",
+      "name": "Northern Bahr el Ghazal",
+      "count": 27.44,
+      "level": "State"
+    },
+    {
+      "code": "SS.WH",
+      "name": "Unity",
+      "count": 28.59,
+      "level": "State"
+    },
+    {
+      "code": "SS.UN",
+      "name": "Upper Nile",
+      "count": 28.43,
+      "level": "State"
+    },
+    {
+      "code": "SS.WB",
+      "name": "Western Bahr el Ghazal",
+      "count": 26.36,
+      "level": "State"
+    },
+    {
+      "code": "SS.WR",
+      "name": "Warrap",
+      "count": 28.28,
+      "level": "State"
+    },
+    {
+      "code": "SD",
+      "name": "Sudan",
+      "count": 27.57,
+      "level": "Country"
+    },
+    {
+      "code": "SD.GZ",
+      "name": "Al Jazeera",
+      "count": 29.14,
+      "level": "State"
+    },
+    {
+      "code": "SD.KH",
+      "name": "Khartoum",
+      "count": 29.32,
+      "level": "State"
+    },
+    {
+      "code": "SD.NO",
+      "name": "Northern",
+      "count": 27.11,
+      "level": "State"
+    },
+    {
+      "code": "SD.RS",
+      "name": "Red Sea",
+      "count": 27.66,
+      "level": "State"
+    },
+    {
+      "code": "SD.RN",
+      "name": "Nile",
+      "count": 29.12,
+      "level": "State"
+    },
+    {
+      "code": "SD.ND",
+      "name": "Northern Darfur",
+      "count": 26.08,
+      "level": "State"
+    },
+    {
+      "code": "SD.KN",
+      "name": "Northern Kordofan",
+      "count": 28.01,
+      "level": "State"
+    },
+    {
+      "code": "SD.GD",
+      "name": "Gadaref",
+      "count": 29.02,
+      "level": "State"
+    },
+    {
+      "code": "SD.SD",
+      "name": "Southern Darfur",
+      "count": 27.3,
+      "level": "State"
+    },
+    {
+      "code": "SD.KS",
+      "name": "Southern Kordofan",
+      "count": 28.32,
+      "level": "State"
+    },
+    {
+      "code": "SD.SI",
+      "name": "Sennar",
+      "count": 28.7,
+      "level": "State"
+    },
+    {
+      "code": "SD.WD",
+      "name": "Western Darfur",
+      "count": 26.23,
+      "level": "State"
+    },
+    {
+      "code": "SD.BN",
+      "name": "Blue Nile",
+      "count": 27.8,
+      "level": "State"
+    },
+    {
+      "code": "SD.KA",
+      "name": "Kassala",
+      "count": 28.98,
+      "level": "State"
+    },
+    {
+      "code": "SD.WN",
+      "name": "White Nile",
+      "count": 28.92,
+      "level": "State"
+    },
+    {
+      "code": "AO",
+      "name": "Angola",
+      "count": 21.63,
+      "level": "Country"
+    },
+    {
+      "code": "AO.BO",
+      "name": "Bengo",
+      "count": 24.09,
+      "level": "Province"
+    },
+    {
+      "code": "AO.BG",
+      "name": "Benguela",
+      "count": 20.83,
+      "level": "Province"
+    },
+    {
+      "code": "AO.BI",
+      "name": "Bie",
+      "count": 19.75,
+      "level": "Province"
+    },
+    {
+      "code": "AO.CB",
+      "name": "Cabinda",
+      "count": 25.38,
+      "level": "Province"
+    },
+    {
+      "code": "AO.CC",
+      "name": "Cuando Cubango",
+      "count": 21.49,
+      "level": "Province"
+    },
+    {
+      "code": "AO.CS",
+      "name": "Cuanza Sul",
+      "count": 20.76,
+      "level": "Province"
+    },
+    {
+      "code": "AO.CC",
+      "name": "Cuanza Sul",
+      "count": 21.49,
+      "level": "Province"
+    },
+    {
+      "code": "AO.CU",
+      "name": "Cunene",
+      "count": 21.49,
+      "level": "Province"
+    },
+    {
+      "code": "AO.HM",
+      "name": "Huambo",
+      "count": 18.91,
+      "level": "Province"
+    },
+    {
+      "code": "AO.HL",
+      "name": "Hu\u00edla",
+      "count": 20.21,
+      "level": "Province"
+    },
+    {
+      "code": "AO.LU",
+      "name": "Luanda",
+      "count": 24.79,
+      "level": "Province"
+    },
+    {
+      "code": "AO.LN",
+      "name": "Lunda Norte",
+      "count": 23.02,
+      "level": "Province"
+    },
+    {
+      "code": "AO.LS",
+      "name": "Lunda Sul",
+      "level": "Province"
+    },
+    {
+      "code": "AO.ML",
+      "name": "Malanje",
+      "count": 21.99,
+      "level": "Province"
+    },
+    {
+      "code": "AO.MX",
+      "name": "Moxico",
+      "count": 21.63,
+      "level": "Province"
+    },
+    {
+      "code": "AO.NA",
+      "name": "Namibe",
+      "count": 19.89,
+      "level": "Province"
+    },
+    {
+      "code": "AO.UI",
+      "name": "Uige",
+      "count": 23,
+      "level": "Province"
+    },
+    {
+      "code": "AO.ZA",
+      "name": "Zaire",
+      "count": 24.41,
+      "level": "Province"
+    },
+    {
+      "code": "CM",
+      "name": "Cameroon",
+      "count": 24.94,
+      "level": "Country"
+    },
+    {
+      "code": "CM.AD",
+      "name": "Adamaoua",
+      "count": 23.47,
+      "level": "Region"
+    },
+    {
+      "code": "CM.CE",
+      "name": "Centre",
+      "count": 25.08,
+      "level": "Region"
+    },
+    {
+      "code": "CM.ES",
+      "name": "East",
+      "count": 24.56,
+      "level": "Region"
+    },
+    {
+      "code": "CM.EN",
+      "name": "Far North",
+      "count": 27.96,
+      "level": "Region"
+    },
+    {
+      "code": "CM.LT",
+      "name": "Littoral",
+      "count": 26.41,
+      "level": "Region"
+    },
+    {
+      "code": "CM.NO",
+      "name": "North",
+      "count": 26.37,
+      "level": "Region"
+    },
+    {
+      "code": "CM.NW",
+      "name": "North-West",
+      "count": 22.01,
+      "level": "Region"
+    },
+    {
+      "code": "CM.SU",
+      "name": "South",
+      "count": 25.19,
+      "level": "Region"
+    },
+    {
+      "code": "CM.SW",
+      "name": "South-West",
+      "count": 23.75,
+      "level": "Region"
+    },
+    {
+      "code": "CM.OU",
+      "name": "West",
+      "count": 22.57,
+      "level": "Region"
+    },
+    {
+      "code": "CF",
+      "name": "Central African Republic",
+      "count": 25.56,
+      "level": "Country"
+    },
+    {
+      "code": "CF.BB",
+      "name": "Bamingui-Bangoran",
+      "count": 26.79,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.BG",
+      "name": "Bangui",
+      "count": 25.98,
+      "level": "AutonomousCommune"
+    },
+    {
+      "code": "CF.BK",
+      "name": "Basse-Kotto",
+      "count": 25.57,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.HK",
+      "name": "Haute-Kotto",
+      "count": 24.88,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.HM",
+      "name": "Haut-Mbomou",
+      "count": 25.3,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.KG",
+      "name": "K\u00e9mo",
+      "count": 25.92,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.LB",
+      "name": "Lobaye",
+      "count": 25.42,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.HS",
+      "name": "Mamb\u00e9r\u00e9-Kad\u00e9\u00ef",
+      "count": 24.88,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.MB",
+      "name": "Mbomou",
+      "count": 25.17,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.NM",
+      "name": "Nana-Mamb\u00e9r\u00e9",
+      "count": 24.28,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.MP",
+      "name": "Ombella-Mpoko",
+      "count": 25.5,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.UK",
+      "name": "Ouaka",
+      "count": 25.64,
+      "level": "Prefecture"
+    },
+    {
+      "code": "CF.AK",
+      "name": "Ouham",
+      "level": "region"
+    },
+    {
+      "code": "CF.AM",
+      "name": "Ouham-Pend\u00e9",
+      "level": "region"
+    },
+    {
+      "code": "CF.VK",
+      "name": "Vakaga",
+      "count": 26.71,
+      "level": "Prefecture"
+    },
+    {
+      "code": "GA",
+      "name": "Gabon",
+      "count": 25.46,
+      "level": "Country"
+    },
+    {
+      "code": "GA.ES",
+      "name": "Estuaire",
+      "count": 25.86,
+      "level": "Province"
+    },
+    {
+      "code": "GA.HO",
+      "name": "Haut-Ogooue",
+      "count": 24.91,
+      "level": "Province"
+    },
+    {
+      "code": "GA.MO",
+      "name": "Moyen-Ogooue",
+      "count": 26.4,
+      "level": "Province"
+    },
+    {
+      "code": "GA.NG",
+      "name": "Ngounie",
+      "count": 25.32,
+      "level": "Province"
+    },
+    {
+      "code": "GA.NY",
+      "name": "Nyanga",
+      "count": 25.14,
+      "level": "Province"
+    },
+    {
+      "code": "GA.OI",
+      "name": "Ogooue-Ivindo",
+      "count": 25.34,
+      "level": "Province"
+    },
+    {
+      "code": "GA.OL",
+      "name": "Ogooue-Lolo",
+      "count": 25.42,
+      "level": "Province"
+    },
+    {
+      "code": "GA.OM",
+      "name": "Ogooue-Maritime",
+      "count": 26.51,
+      "level": "Province"
+    },
+    {
+      "code": "GA.WN",
+      "name": "Woleu-Ntem",
+      "count": 25.14,
+      "level": "Province"
+    },
+    {
+      "code": "CG",
+      "name": "Congo",
+      "count": 25.05,
+      "level": "Country"
+    },
+    {
+      "code": "CG.BO",
+      "name": "Bouenza",
+      "count": 24.67,
+      "level": "Region"
+    },
+    {
+      "code": "CG.BR",
+      "name": "Brazzaville",
+      "count": 25.2,
+      "level": "Region"
+    },
+    {
+      "code": "CG.CU",
+      "name": "Cuvette",
+      "count": 25.79,
+      "level": "Region"
+    },
+    {
+      "code": "CG.CO",
+      "name": "Cuvette-Ouest",
+      "count": 24.74,
+      "level": "Region"
+    },
+    {
+      "code": "CG.KO",
+      "name": "Kouilou",
+      "count": 25.36,
+      "level": "Region"
+    },
+    {
+      "code": "CG.LE",
+      "name": "Lekoumou",
+      "count": 24.1,
+      "level": "Region"
+    },
+    {
+      "code": "CG.LI",
+      "name": "Likouala",
+      "count": 25.48,
+      "level": "Region"
+    },
+    {
+      "code": "CG.NI",
+      "name": "Niari",
+      "count": 24.62,
+      "level": "Region"
+    },
+    {
+      "code": "CG.PL",
+      "name": "Plateaux",
+      "count": 25.02,
+      "level": "Region"
+    },
+    {
+      "code": "CG.PN",
+      "name": "Pointe-Noire",
+      "count": 25.58,
+      "level": "Region"
+    },
+    {
+      "code": "CG.PO",
+      "name": "Pool",
+      "count": 24.36,
+      "level": "Region"
+    },
+    {
+      "code": "CG.SA",
+      "name": "Sangha",
+      "count": 25.18,
+      "level": "Region"
+    },
+    {
+      "code": "ST",
+      "name": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+      "count": 24.66,
+      "level": "Country"
+    },
+    {
+      "code": "ST.ST",
+      "name": "Sao Tome",
+      "count": 24.53,
+      "level": "region"
+    },
+    {
+      "code": "ST.PR",
+      "name": "Principe",
+      "count": 25.44,
+      "level": "region"
+    },
+    {
+      "code": "GQ",
+      "name": "Equatorial Guinea",
+      "count": 24.89,
+      "level": "Country"
+    },
+    {
+      "code": "GQ.AN",
+      "name": "Annobon",
+      "level": "Province"
+    },
+    {
+      "code": "GQ.BN",
+      "name": "Bioko Norte",
+      "count": 24.46,
+      "level": "Province"
+    },
+    {
+      "code": "GQ.BS",
+      "name": "Bioko Sur",
+      "count": 24.17,
+      "level": "Province"
+    },
+    {
+      "code": "GQ.CS",
+      "name": "Centro Sur",
+      "count": 24.79,
+      "level": "Province"
+    },
+    {
+      "code": "GQ.KN",
+      "name": "Kientem",
+      "count": 25.61,
+      "level": "Province"
+    },
+    {
+      "code": "GQ.LI",
+      "name": "Litoral",
+      "count": 24.73,
+      "level": "Province"
+    },
+    {
+      "code": "GQ.WN",
+      "name": "Welenzas",
+      "count": 25.02,
+      "level": "Province"
+    },
+    {
+      "code": "TD",
+      "name": "Chad",
+      "count": 27.28,
+      "level": "Country"
+    },
+    {
+      "code": "TD.BG",
+      "name": "Barh el Ghazel",
+      "count": 29.27,
+      "level": "Region"
+    },
+    {
+      "code": "TD.LC",
+      "name": "Lac",
+      "count": 28.35,
+      "level": "Region"
+    },
+    {
+      "code": "TD.LO",
+      "name": "Logone Occidental",
+      "count": 26.76,
+      "level": "Region"
+    },
+    {
+      "code": "TD.LR",
+      "name": "Logone Oriental",
+      "count": 26.61,
+      "level": "Region"
+    },
+    {
+      "code": "TD.MA",
+      "name": "Mandoul",
+      "count": 27.32,
+      "level": "Region"
+    },
+    {
+      "code": "TD.ME",
+      "name": "Mayo-Kebbi Est",
+      "count": 27.94,
+      "level": "Region"
+    },
+    {
+      "code": "TD.MW",
+      "name": "Mayo-Kebbi Ouest",
+      "count": 27.45,
+      "level": "Region"
+    },
+    {
+      "code": "TD.MC",
+      "name": "Moyen-Chari",
+      "count": 27.93,
+      "level": "Region"
+    },
+    {
+      "code": "TD.OA",
+      "name": "Ouadda\u00ef",
+      "count": 28.36,
+      "level": "Region"
+    },
+    {
+      "code": "TD.SA",
+      "name": "Salamat",
+      "count": 28.24,
+      "level": "Region"
+    },
+    {
+      "code": "TD.BA",
+      "name": "Batha",
+      "count": 29.46,
+      "level": "Region"
+    },
+    {
+      "code": "TD.TA",
+      "name": "Tandjil\u00e9",
+      "count": 27.58,
+      "level": "Region"
+    },
+    {
+      "code": "TD.TI",
+      "name": "Tibesti",
+      "count": 23.71,
+      "level": "Region"
+    },
+    {
+      "code": "TD.NJ",
+      "name": "Ville de N'Djamena",
+      "count": 27.87,
+      "level": "Region"
+    },
+    {
+      "code": "TD.BI",
+      "name": "Wadi Fira",
+      "count": 27.57,
+      "level": "Region"
+    },
+    {
+      "code": "TD.BR",
+      "name": "Borkou",
+      "count": 28.59,
+      "level": "Region"
+    },
+    {
+      "code": "TD.CB",
+      "name": "Chari-Baguirmi",
+      "count": 28.37,
+      "level": "Region"
+    },
+    {
+      "code": "TD.EE",
+      "name": "Ennedi Est",
+      "count": 25.52,
+      "level": "Region"
+    },
+    {
+      "code": "TD.EO",
+      "name": "Ennedi Ouest",
+      "count": 26.86,
+      "level": "Region"
+    },
+    {
+      "code": "TD.GR",
+      "name": "Gu\u00e9ra",
+      "count": 28.66,
+      "level": "Region"
+    },
+    {
+      "code": "TD.HD",
+      "name": "Hadjer-Lamis",
+      "count": 28.56,
+      "level": "Region"
+    },
+    {
+      "code": "TD.KM",
+      "name": "Kanem",
+      "count": 28.89,
+      "level": "Region"
+    },
+    {
+      "code": "TD.SI",
+      "name": "Sila",
+      "count": 28.17,
+      "level": "Region"
+    },
+    {
+      "code": "CD",
+      "name": "Democratic Republic of Congo",
+      "count": 24.38,
+      "level": "Country"
+    },
+    {
+      "code": "CD.KG",
+      "name": "Kwango",
+      "count": 24.19,
+      "level": "Province"
+    },
+    {
+      "code": "CD.KU",
+      "name": "Kwilu",
+      "count": 25.54,
+      "level": "Province"
+    },
+    {
+      "code": "CD.MA",
+      "name": "Ma\u00ef-Ndombe",
+      "count": 25.97,
+      "level": "Province"
+    },
+    {
+      "code": "CD.BC",
+      "name": "Kongo Central",
+      "count": 24.6,
+      "level": "Province"
+    },
+    {
+      "code": "CD.ET",
+      "name": "\u00c9quateur",
+      "count": 25.68,
+      "level": "Province"
+    },
+    {
+      "code": "CD.MO",
+      "name": "Mongala",
+      "count": 25.77,
+      "level": "Province"
+    },
+    {
+      "code": "CD.NU",
+      "name": "Nord-Ubangi",
+      "count": 25.54,
+      "level": "Province"
+    },
+    {
+      "code": "CD.SU",
+      "name": "Sud-Ubangi",
+      "count": 25.98,
+      "level": "Province"
+    },
+    {
+      "code": "CD.TP",
+      "name": "Tshuapa",
+      "count": 25.36,
+      "level": "Province"
+    },
+    {
+      "code": "CD.KS",
+      "name": "Kasa\u00ef",
+      "count": 25.21,
+      "level": "Province"
+    },
+    {
+      "code": "CD.LL",
+      "name": "Kasa\u00ef-Central",
+      "count": 24.05,
+      "level": "Province"
+    },
+    {
+      "code": "CD.LM",
+      "name": "Lomami",
+      "count": 24.86,
+      "level": "Province"
+    },
+    {
+      "code": "CD.SN",
+      "name": "Sankuru",
+      "count": 24.99,
+      "level": "Province"
+    },
+    {
+      "code": "CD.KO",
+      "name": "Kasa\u00ef-Oriental",
+      "count": 25,
+      "level": "Province"
+    },
+    {
+      "code": "CD.HK",
+      "name": "Haut-Katanga",
+      "count": 21.51,
+      "level": "Province"
+    },
+    {
+      "code": "CD.HL",
+      "name": "Haut-Lomami",
+      "count": 23.92,
+      "level": "Province"
+    },
+    {
+      "code": "CD.LB",
+      "name": "Lualaba",
+      "count": 22.36,
+      "level": "Province"
+    },
+    {
+      "code": "CD.TG",
+      "name": "Tanganyika",
+      "count": 23.81,
+      "level": "Province"
+    },
+    {
+      "code": "CD.KN",
+      "name": "Kinshasa",
+      "count": 24.88,
+      "level": "Province"
+    },
+    {
+      "code": "CD.MN",
+      "name": "Maniema",
+      "count": 24.46,
+      "level": "Province"
+    },
+    {
+      "code": "CD.NK",
+      "name": "Nord-Kivu",
+      "count": 21.59,
+      "level": "Province"
+    },
+    {
+      "code": "CD.BU",
+      "name": "Bas-U\u00e9l\u00e9",
+      "count": 25.06,
+      "level": "Province"
+    },
+    {
+      "code": "CD.HU",
+      "name": "Haut-U\u00e9l\u00e9",
+      "count": 24.45,
+      "level": "Province"
+    },
+    {
+      "code": "CD.IT",
+      "name": "Ituri",
+      "count": 22.92,
+      "level": "Province"
+    },
+    {
+      "code": "CD.TO",
+      "name": "Tshopo",
+      "count": 24.96,
+      "level": "Province"
+    },
+    {
+      "code": "CD.SK",
+      "name": "Sud-Kivu",
+      "count": 21.28,
+      "level": "Province"
+    },
+    {
+      "code": "BW",
+      "name": "Botswana",
+      "count": 22,
+      "level": "Country"
+    },
+    {
+      "code": "BW.CE",
+      "name": "Central",
+      "count": 22.13,
+      "level": "District"
+    },
+    {
+      "code": "BW.CH",
+      "name": "Chobe",
+      "count": 22.97,
+      "level": "District"
+    },
+    {
+      "code": "BW.GH",
+      "name": "Ghanzi",
+      "count": 21.95,
+      "level": "District"
+    },
+    {
+      "code": "BW.KG",
+      "name": "Kgalagadi",
+      "count": 21.16,
+      "level": "District"
+    },
+    {
+      "code": "BW.KL",
+      "name": "Kgatleng",
+      "count": 21.86,
+      "level": "District"
+    },
+    {
+      "code": "BW.KW",
+      "name": "Kweneng",
+      "count": 21.46,
+      "level": "District"
+    },
+    {
+      "code": "BW.NE",
+      "name": "North East",
+      "count": 21.3,
+      "level": "District"
+    },
+    {
+      "code": "BW.SE",
+      "name": "South-East",
+      "level": "region"
+    },
+    {
+      "code": "BW.SO",
+      "name": "Southern",
+      "count": 20.85,
+      "level": "District"
+    },
+    {
+      "code": "LS",
+      "name": "Lesotho",
+      "count": 12.64,
+      "level": "Country"
+    },
+    {
+      "code": "LS.BE",
+      "name": "Berea",
+      "count": 13.86,
+      "level": "District"
+    },
+    {
+      "code": "LS.BB",
+      "name": "Butha Buthe",
+      "count": 11.35,
+      "level": "District"
+    },
+    {
+      "code": "LS.LE",
+      "name": "Leribe",
+      "count": 12.98,
+      "level": "District"
+    },
+    {
+      "code": "LS.MF",
+      "name": "Mafeteng",
+      "count": 15.29,
+      "level": "District"
+    },
+    {
+      "code": "LS.MS",
+      "name": "Maseru",
+      "count": 13.67,
+      "level": "District"
+    },
+    {
+      "code": "LS.MH",
+      "name": "Mohale's Hoek",
+      "count": 13.91,
+      "level": "District"
+    },
+    {
+      "code": "LS.MK",
+      "name": "Mokhotlong",
+      "count": 10.22,
+      "level": "District"
+    },
+    {
+      "code": "LS.QN",
+      "name": "Qacha's Nek",
+      "count": 12.28,
+      "level": "District"
+    },
+    {
+      "code": "LS.QT",
+      "name": "Quthing",
+      "count": 13.38,
+      "level": "District"
+    },
+    {
+      "code": "LS.TT",
+      "name": "Thaba Tseka",
+      "count": 11.21,
+      "level": "District"
+    },
+    {
+      "code": "ZA",
+      "name": "South Africa",
+      "count": 18.42,
+      "level": "Country"
+    },
+    {
+      "code": "ZA.FS",
+      "name": "Free State",
+      "count": 16.88,
+      "level": "Province"
+    },
+    {
+      "code": "ZA.GT",
+      "name": "Gauteng",
+      "count": 17.7,
+      "level": "Province"
+    },
+    {
+      "code": "ZA.WC",
+      "name": "Western Cape",
+      "count": 17.27,
+      "level": "Province"
+    },
+    {
+      "code": "ZA.EC",
+      "name": "Eastern Cape",
+      "count": 16.85,
+      "level": "Province"
+    },
+    {
+      "code": "ZA.NL",
+      "name": "KwaZulu-Natal",
+      "count": 18.86,
+      "level": "Province"
+    },
+    {
+      "code": "ZA.NP",
+      "name": "Limpopo",
+      "count": 21.16,
+      "level": "Province"
+    },
+    {
+      "code": "ZA.MP",
+      "name": "Mpumalanga",
+      "count": 18.27,
+      "level": "Province"
+    },
+    {
+      "code": "ZA.NW",
+      "name": "North West",
+      "count": 19.32,
+      "level": "Province"
+    },
+    {
+      "code": "ZA.NC",
+      "name": "Northern Cape",
+      "count": 18.83,
+      "level": "Province"
+    },
+    {
+      "code": "SZ",
+      "name": "Eswatini",
+      "count": 20.92,
+      "level": "country"
+    },
+    {
+      "code": "SZ.HH",
+      "name": "Hhohho",
+      "count": 20.12,
+      "level": "region"
+    },
+    {
+      "code": "SZ.LU",
+      "name": "Lubombo",
+      "count": 22.66,
+      "level": "region"
+    },
+    {
+      "code": "SZ.MA",
+      "name": "Manzini",
+      "count": 19.59,
+      "level": "region"
+    },
+    {
+      "code": "SZ.SH",
+      "name": "Shiselweni",
+      "count": 20.44,
+      "level": "region"
+    },
+    {
+      "code": "NA",
+      "name": "Namibia",
+      "count": 20.24,
+      "level": "Country"
+    },
+    {
+      "code": "NA.CA",
+      "name": "Caprivi",
+      "count": 23,
+      "level": "Region"
+    },
+    {
+      "code": "NA.ER",
+      "name": "Erongo",
+      "count": 19.88,
+      "level": "Region"
+    },
+    {
+      "code": "NA.HA",
+      "name": "Hardap",
+      "count": 20.52,
+      "level": "Region"
+    },
+    {
+      "code": "NA.KA",
+      "name": "Karas",
+      "count": 19.45,
+      "level": "Region"
+    },
+    {
+      "code": "NA.OK",
+      "name": "Kavango",
+      "count": 22.23,
+      "level": "Region"
+    },
+    {
+      "code": "NA.KH",
+      "name": "Khomas",
+      "count": 20.2,
+      "level": "Region"
+    },
+    {
+      "code": "NA.KU",
+      "name": "Kunene",
+      "count": 17.88,
+      "level": "Region"
+    },
+    {
+      "code": "NA.OW",
+      "name": "Ohangwena",
+      "count": 22.64,
+      "level": "Region"
+    },
+    {
+      "code": "NA.OH",
+      "name": "Omaheke",
+      "count": 20.66,
+      "level": "Region"
+    },
+    {
+      "code": "NA.OS",
+      "name": "Omusati",
+      "count": 20.24,
+      "level": "Region"
+    },
+    {
+      "code": "NA.ON",
+      "name": "Oshana",
+      "count": 22.07,
+      "level": "Region"
+    },
+    {
+      "code": "NA.OT",
+      "name": "Oshikoto",
+      "count": 22.42,
+      "level": "Region"
+    },
+    {
+      "code": "NA.OD",
+      "name": "Otjozondjupa",
+      "count": 21.18,
+      "level": "Region"
+    },
+    {
+      "code": "MZ",
+      "name": "Mozambique",
+      "count": 24.42,
+      "level": "Country"
+    },
+    {
+      "code": "MZ.ZA",
+      "name": "Zamb\u00e9zia",
+      "count": 24.69,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.NS",
+      "name": "Niassa",
+      "count": 23.55,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.MC",
+      "name": "Cidade de Maputo",
+      "count": 24.11,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.CD",
+      "name": "Cabo Delgado",
+      "count": 25.51,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.NM",
+      "name": "Nampula",
+      "count": 25.07,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.TE",
+      "name": "Tete",
+      "count": 24.26,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.MN",
+      "name": "Manica",
+      "count": 23.74,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.GA",
+      "name": "Gaza",
+      "count": 24.25,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.MP",
+      "name": "Maputo",
+      "count": 23.89,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.SO",
+      "name": "Sofala",
+      "count": 25.07,
+      "level": "Province"
+    },
+    {
+      "code": "MZ.IN",
+      "name": "Inhambane",
+      "count": 24.3,
+      "level": "Province"
+    },
+    {
+      "code": "ZM",
+      "name": "Zambia",
+      "count": 21.92,
+      "level": "Country"
+    },
+    {
+      "code": "ZM.CE",
+      "name": "Central",
+      "count": 21.64,
+      "level": "Province"
+    },
+    {
+      "code": "ZM.WE",
+      "name": "Western",
+      "count": 22.6,
+      "level": "Province"
+    },
+    {
+      "code": "ZM.CO",
+      "name": "Copperbelt",
+      "count": 20.72,
+      "level": "Province"
+    },
+    {
+      "code": "ZM.EA",
+      "name": "Eastern",
+      "count": 23.27,
+      "level": "Province"
+    },
+    {
+      "code": "ZM.LP",
+      "name": "Luapula",
+      "count": 21.87,
+      "level": "Province"
+    },
+    {
+      "code": "ZM.LS",
+      "name": "Lusaka",
+      "count": 23.16,
+      "level": "Province"
+    },
+    {
+      "code": "ZM.MU",
+      "name": "Muchinga",
+      "count": 21.57,
+      "level": "Province"
+    },
+    {
+      "code": "ZM.NW",
+      "name": "North-Western",
+      "count": 21.19,
+      "level": "Province"
+    },
+    {
+      "code": "ZM.NO",
+      "name": "Northern",
+      "count": 21.65,
+      "level": "Province"
+    },
+    {
+      "code": "ZM.SO",
+      "name": "Southern",
+      "count": 22.28,
+      "level": "Province"
+    },
+    {
+      "code": "ZW",
+      "name": "Zimbabwe",
+      "count": 21.83,
+      "level": "Country"
+    },
+    {
+      "code": "ZW.BU",
+      "name": "Bulawayo",
+      "count": 19.87,
+      "level": "City"
+    },
+    {
+      "code": "ZW.HA",
+      "name": "Harare",
+      "count": 19.49,
+      "level": "City"
+    },
+    {
+      "code": "ZW.MA",
+      "name": "Manicaland",
+      "count": 20.57,
+      "level": "Province"
+    },
+    {
+      "code": "ZW.MC",
+      "name": "Mashonaland Central",
+      "count": 22.41,
+      "level": "Province"
+    },
+    {
+      "code": "ZW.MW",
+      "name": "Mashonaland West",
+      "count": 22.49,
+      "level": "Province"
+    },
+    {
+      "code": "ZW.MV",
+      "name": "Masvingo",
+      "count": 22.4,
+      "level": "Province"
+    },
+    {
+      "code": "ZW.MS",
+      "name": "Matabeleland South",
+      "count": 21.55,
+      "level": "Province"
+    },
+    {
+      "code": "ZW.MI",
+      "name": "Midlands",
+      "count": 21.43,
+      "level": "Province"
+    },
+    {
+      "code": "ZW.MN",
+      "name": "Matabeleland North",
+      "count": 22.31,
+      "level": "Province"
+    },
+    {
+      "code": "ZW.ME",
+      "name": "Mashonaland East",
+      "count": 20.59,
+      "level": "Province"
+    },
+    {
+      "code": "UG",
+      "name": "Uganda",
+      "count": 23.14,
+      "level": "Country"
+    },
+    {
+      "code": "UG.AW",
+      "name": "Arua",
+      "count": 24.63,
+      "level": "region"
+    },
+    {
+      "code": "UG.GL",
+      "name": "Buvuma",
+      "count": 24.47,
+      "level": "region"
+    },
+    {
+      "code": "UG.KU",
+      "name": "Gomba",
+      "count": 24.32,
+      "level": "region"
+    },
+    {
+      "code": "UG.KJ",
+      "name": "Gulu",
+      "count": 21.28,
+      "level": "region"
+    },
+    {
+      "code": "UG.MI",
+      "name": "Kibuku",
+      "count": 22.14,
+      "level": "region"
+    },
+    {
+      "code": "UG.MN",
+      "name": "Kiryandongo",
+      "count": 22.81,
+      "level": "region"
+    },
+    {
+      "code": "UG.PL",
+      "name": "Kumi",
+      "count": 23.97,
+      "level": "region"
+    },
+    {
+      "code": "UG.LA",
+      "name": "Kyankwanzi",
+      "count": 24.25,
+      "level": "region"
+    },
+    {
+      "code": "UG.RA",
+      "name": "Mitooma",
+      "count": 21.06,
+      "level": "region"
+    },
+    {
+      "code": "UG.AD",
+      "name": "Kyegegwa",
+      "count": 25.57,
+      "level": "region"
+    },
+    {
+      "code": "UG.BU",
+      "name": "Kyenjojo",
+      "count": 23.04,
+      "level": "region"
+    },
+    {
+      "code": "UG.HO",
+      "name": "Mpigi",
+      "count": 23.63,
+      "level": "region"
+    },
+    {
+      "code": "UG.JI",
+      "name": "Nwoya",
+      "count": 23.4,
+      "level": "region"
+    },
+    {
+      "code": "UG.KA",
+      "name": "Serere",
+      "count": 17.64,
+      "level": "region"
+    },
+    {
+      "code": "UG.KN",
+      "name": "Lwengo",
+      "count": 22.45,
+      "level": "region"
+    },
+    {
+      "code": "UG.KS",
+      "name": "Mukono",
+      "count": 21.22,
+      "level": "region"
+    },
+    {
+      "code": "UG.KI",
+      "name": "Namayingo",
+      "count": 22.15,
+      "level": "region"
+    },
+    {
+      "code": "UG.KR",
+      "name": "Pallisa",
+      "count": 16.61,
+      "level": "region"
+    },
+    {
+      "code": "UG.MY",
+      "name": "Lira",
+      "count": 25.73,
+      "level": "region"
+    },
+    {
+      "code": "UG.NT",
+      "name": "Rakai",
+      "count": 19.61,
+      "level": "region"
+    },
+    {
+      "code": "UG.SE",
+      "name": "Lyantonde",
+      "count": 21.3,
+      "level": "region"
+    },
+    {
+      "code": "UG.BR",
+      "name": "Adjumani",
+      "count": 21.39,
+      "level": "region"
+    },
+    {
+      "code": "UG.KD",
+      "name": "Busia",
+      "count": 24.25,
+      "level": "region"
+    },
+    {
+      "code": "UG.KM",
+      "name": "Hoima",
+      "count": 22.63,
+      "level": "region"
+    },
+    {
+      "code": "UG.KE",
+      "name": "Jinja",
+      "count": 21.4,
+      "level": "region"
+    },
+    {
+      "code": "UG.UU",
+      "name": "Kabale",
+      "count": 21.25,
+      "level": "region"
+    },
+    {
+      "code": "UG.KY",
+      "name": "Kalangala",
+      "count": 23.49,
+      "level": "region"
+    },
+    {
+      "code": "UG.MG",
+      "name": "Kasese",
+      "count": 23.2,
+      "level": "region"
+    },
+    {
+      "code": "UG.NA",
+      "name": "Kibaale",
+      "count": 23.51,
+      "level": "region"
+    },
+    {
+      "code": "UG.RK",
+      "name": "Kisoro",
+      "count": 21.71,
+      "level": "region"
+    },
+    {
+      "code": "UG.WA",
+      "name": "Moyo",
+      "count": 22.43,
+      "level": "region"
+    },
+    {
+      "code": "UG.YU",
+      "name": "Ntungamo",
+      "count": 25.41,
+      "level": "region"
+    },
+    {
+      "code": "UG.KK",
+      "name": "Ssembabule",
+      "count": 24.65,
+      "level": "region"
+    },
+    {
+      "code": "UG.LW",
+      "name": "Kabarole",
+      "count": 23.2,
+      "level": "region"
+    },
+    {
+      "code": "UG.ME",
+      "name": "Kaberamaido",
+      "count": 22.15,
+      "level": "region"
+    },
+    {
+      "code": "UG.RR",
+      "name": "Kampala",
+      "count": 20.3,
+      "level": "region"
+    },
+    {
+      "code": "UG.MD",
+      "name": "Kamwenge",
+      "count": 21.76,
+      "level": "region"
+    },
+    {
+      "code": "UG.TR",
+      "name": "Kanungu",
+      "count": 22.94,
+      "level": "region"
+    },
+    {
+      "code": "UG.AC",
+      "name": "Kayunga",
+      "count": 23.87,
+      "level": "region"
+    },
+    {
+      "code": "UG.BG",
+      "name": "Mayuge",
+      "count": 23.54,
+      "level": "region"
+    },
+    {
+      "code": "UG.BN",
+      "name": "Nakasongola",
+      "count": 21.37,
+      "level": "region"
+    },
+    {
+      "code": "UG.BS",
+      "name": "Rukungiri",
+      "count": 20.81,
+      "level": "region"
+    },
+    {
+      "code": "UG.IN",
+      "name": "Wakiso",
+      "count": 23.66,
+      "level": "region"
+    },
+    {
+      "code": "UG.KX",
+      "name": "Yumbe",
+      "count": 23.65,
+      "level": "region"
+    },
+    {
+      "code": "UG.KP",
+      "name": "Amolatar",
+      "count": 21.58,
+      "level": "region"
+    },
+    {
+      "code": "UG.TG",
+      "name": "Amuria",
+      "count": 24.79,
+      "level": "region"
+    },
+    {
+      "code": "UG.KF",
+      "name": "Butaleja",
+      "count": 24.15,
+      "level": "region"
+    },
+    {
+      "code": "UG.MA",
+      "name": "Ibanda",
+      "count": 21.65,
+      "level": "region"
+    },
+    {
+      "code": "UG.MC",
+      "name": "Isingiro",
+      "count": 23.62,
+      "level": "region"
+    },
+    {
+      "code": "UG.MT",
+      "name": "Kaabong",
+      "count": 24.35,
+      "level": "region"
+    },
+    {
+      "code": "UG.NP",
+      "name": "Kaliro",
+      "count": 23.89,
+      "level": "region"
+    },
+    {
+      "code": "UG.NE",
+      "name": "Katakwi",
+      "count": 24.64,
+      "level": "region"
+    },
+    {
+      "code": "UG.PD",
+      "name": "Kiruhura",
+      "count": 24.77,
+      "level": "region"
+    },
+    {
+      "code": "UG.SI",
+      "name": "Koboko",
+      "count": 21.78,
+      "level": "region"
+    },
+    {
+      "code": "UG.SR",
+      "name": "Luwero",
+      "count": 24.5,
+      "level": "region"
+    },
+    {
+      "code": "SN",
+      "name": "Senegal",
+      "count": 29,
+      "level": "Country"
+    },
+    {
+      "code": "SN.DK",
+      "name": "Dakar",
+      "count": 26.38,
+      "level": "Region"
+    },
+    {
+      "code": "SN.ST",
+      "name": "Saint-Louis",
+      "count": 28.48,
+      "level": "Region"
+    },
+    {
+      "code": "SN.SD",
+      "name": "S\u00e9dhiou",
+      "count": 28.19,
+      "level": "Region"
+    },
+    {
+      "code": "SN.TB",
+      "name": "Tambacounda",
+      "count": 29.65,
+      "level": "Region"
+    },
+    {
+      "code": "SN.TH",
+      "name": "Thi\u00e8s",
+      "count": 27.3,
+      "level": "Region"
+    },
+    {
+      "code": "SN.ZG",
+      "name": "Ziguinchor",
+      "count": 27.52,
+      "level": "Region"
+    },
+    {
+      "code": "SN.DB",
+      "name": "Diourbel",
+      "count": 28.64,
+      "level": "Region"
+    },
+    {
+      "code": "SN.FK",
+      "name": "Fatick",
+      "count": 28.3,
+      "level": "Region"
+    },
+    {
+      "code": "SN.KF",
+      "name": "Kaffrine",
+      "count": 29.33,
+      "level": "Region"
+    },
+    {
+      "code": "SN.KC",
+      "name": "Kaolack",
+      "count": 28.81,
+      "level": "Region"
+    },
+    {
+      "code": "SN.KG",
+      "name": "K\u00e9dougou",
+      "count": 29.03,
+      "level": "Region"
+    },
+    {
+      "code": "SN.KD",
+      "name": "Kolda",
+      "count": 28.78,
+      "level": "Region"
+    },
+    {
+      "code": "SN.LG",
+      "name": "Louga",
+      "count": 28.62,
+      "level": "Region"
+    },
+    {
+      "code": "SN.MT",
+      "name": "Matam",
+      "count": 29.93,
+      "level": "Region"
+    },
+    {
+      "code": "ML",
+      "name": "Mali",
+      "count": 29.19,
+      "level": "Country"
+    },
+    {
+      "code": "ML.BA",
+      "name": "Bamako",
+      "count": 28.45,
+      "level": "District"
+    },
+    {
+      "code": "ML.GA",
+      "name": "Gao",
+      "count": 30.08,
+      "level": "Region"
+    },
+    {
+      "code": "ML.MK",
+      "name": "M\u00e9naka",
+      "level": "region"
+    },
+    {
+      "code": "ML.KY",
+      "name": "Kayes",
+      "count": 28.99,
+      "level": "Region"
+    },
+    {
+      "code": "ML.KD",
+      "name": "Kidal",
+      "count": 28.96,
+      "level": "Region"
+    },
+    {
+      "code": "ML.KK",
+      "name": "Koulikoro",
+      "count": 28.74,
+      "level": "Region"
+    },
+    {
+      "code": "ML.MO",
+      "name": "Mopti",
+      "count": 29.63,
+      "level": "Region"
+    },
+    {
+      "code": "ML.SG",
+      "name": "S\u00e9gou",
+      "count": 29.06,
+      "level": "Region"
+    },
+    {
+      "code": "ML.SK",
+      "name": "Sikasso",
+      "count": 27.74,
+      "level": "Region"
+    },
+    {
+      "code": "ML.TB",
+      "name": "Timbuktu",
+      "count": 29.28,
+      "level": "Region"
+    },
+    {
+      "code": "GW",
+      "name": "Guinea-Bissau",
+      "count": 28.05,
+      "level": "Country"
+    },
+    {
+      "code": "GW.BA",
+      "name": "Bafata",
+      "count": 28.21,
+      "level": "Region"
+    },
+    {
+      "code": "GW.BM",
+      "name": "Biombo",
+      "count": 27.67,
+      "level": "Region"
+    },
+    {
+      "code": "GW.BL",
+      "name": "Bolama/Bijagos",
+      "count": 27.53,
+      "level": "Region"
+    },
+    {
+      "code": "GW.CA",
+      "name": "Cacheu",
+      "count": 27.69,
+      "level": "Region"
+    },
+    {
+      "code": "GW.GA",
+      "name": "Gabu",
+      "count": 28.33,
+      "level": "Region"
+    },
+    {
+      "code": "GW.OI",
+      "name": "Oio",
+      "count": 28.03,
+      "level": "Region"
+    },
+    {
+      "code": "GW.QU",
+      "name": "Quinara",
+      "count": 27.93,
+      "level": "Region"
+    },
+    {
+      "code": "GW.SA",
+      "name": "Sector Autonomo De Bissau",
+      "level": "region"
+    },
+    {
+      "code": "GW.TO",
+      "name": "Tombali",
+      "count": 27.94,
+      "level": "Region"
+    },
+    {
+      "code": "GN",
+      "name": "Guinea",
+      "count": 25.95,
+      "level": "Country"
+    },
+    {
+      "code": "GN.BK",
+      "name": "Boke",
+      "level": "region"
+    },
+    {
+      "code": "GN.C",
+      "name": "Conakry",
+      "count": 26.88,
+      "level": "region"
+    },
+    {
+      "code": "GN.FR",
+      "name": "Faranah",
+      "level": "region"
+    },
+    {
+      "code": "GN.K",
+      "name": "Kankan",
+      "count": 26.26,
+      "level": "region"
+    },
+    {
+      "code": "GN.KD",
+      "name": "Kindia",
+      "level": "region"
+    },
+    {
+      "code": "GN.L",
+      "name": "Labe",
+      "level": "region"
+    },
+    {
+      "code": "GN.M",
+      "name": "Mamou",
+      "level": "region"
+    },
+    {
+      "code": "GN.N",
+      "name": "Nzerekore",
+      "level": "region"
+    },
+    {
+      "code": "MR",
+      "name": "Mauritania",
+      "count": 28.9,
+      "level": "Country"
+    },
+    {
+      "code": "MR.AD",
+      "name": "Adrar",
+      "count": 29.14,
+      "level": "Region"
+    },
+    {
+      "code": "MR.AS",
+      "name": "Assaba",
+      "count": 30.65,
+      "level": "Region"
+    },
+    {
+      "code": "MR.BR",
+      "name": "Brakna",
+      "count": 30.47,
+      "level": "Region"
+    },
+    {
+      "code": "MR.DN",
+      "name": "Dakhlet-Nouadhibou",
+      "count": 25.73,
+      "level": "Region"
+    },
+    {
+      "code": "MR.GO",
+      "name": "Gorgol",
+      "count": 30.66,
+      "level": "Region"
+    },
+    {
+      "code": "MR.GD",
+      "name": "Guidimakha",
+      "count": 30.47,
+      "level": "Region"
+    },
+    {
+      "code": "MR.HC",
+      "name": "Hodh Ech Chargi",
+      "count": 30.06,
+      "level": "Region"
+    },
+    {
+      "code": "MR.HG",
+      "name": "Hodh El Gharbi",
+      "count": 30.49,
+      "level": "Region"
+    },
+    {
+      "code": "MR.IN",
+      "name": "Inchiri",
+      "count": 27.99,
+      "level": "Region"
+    },
+    {
+      "code": "MR.NO",
+      "name": "Nouakchott",
+      "count": 28.01,
+      "level": "District"
+    },
+    {
+      "code": "MR.TG",
+      "name": "Tagant",
+      "count": 30.23,
+      "level": "Region"
+    },
+    {
+      "code": "MR.TZ",
+      "name": "Tiris-Zemmour",
+      "count": 26.72,
+      "level": "Region"
+    },
+    {
+      "code": "MR.TR",
+      "name": "Trarza",
+      "count": 29.38,
+      "level": "Region"
+    },
+    {
+      "code": "SL",
+      "name": "Sierra Leone",
+      "count": 26.64,
+      "level": "Country"
+    },
+    {
+      "code": "SL.EA",
+      "name": "Eastern",
+      "count": 26.1,
+      "level": "Province"
+    },
+    {
+      "code": "SL.NO",
+      "name": "Northern",
+      "count": 26.29,
+      "level": "Province"
+    },
+    {
+      "code": "SL.NW",
+      "name": "North West",
+      "level": "region"
+    },
+    {
+      "code": "SL.SO",
+      "name": "Southern",
+      "count": 26.97,
+      "level": "Province"
+    },
+    {
+      "code": "SL.WE",
+      "name": "Western Area",
+      "count": 26.69,
+      "level": "Province"
+    },
+    {
+      "code": "LR",
+      "name": "Liberia",
+      "count": 25.47,
+      "level": "Country"
+    },
+    {
+      "code": "LR.BM",
+      "name": "Bomi",
+      "count": 26.25,
+      "level": "County"
+    },
+    {
+      "code": "LR.MY",
+      "name": "Maryland",
+      "count": 25.5,
+      "level": "County"
+    },
+    {
+      "code": "LR.MO",
+      "name": "Montserrado",
+      "count": 26.14,
+      "level": "County"
+    },
+    {
+      "code": "LR.NI",
+      "name": "Nimba",
+      "count": 25.21,
+      "level": "County"
+    },
+    {
+      "code": "LR.RG",
+      "name": "River Gee",
+      "count": 25.37,
+      "level": "County"
+    },
+    {
+      "code": "LR.RI",
+      "name": "Rivercess",
+      "count": 25.62,
+      "level": "County"
+    },
+    {
+      "code": "LR.SI",
+      "name": "Sinoe",
+      "count": 25.4,
+      "level": "County"
+    },
+    {
+      "code": "LR.BG",
+      "name": "Bong",
+      "count": 25.45,
+      "level": "County"
+    },
+    {
+      "code": "LR.GP",
+      "name": "Gbarpolu",
+      "count": 25.47,
+      "level": "County"
+    },
+    {
+      "code": "LR.GB",
+      "name": "Grand Bassa",
+      "count": 25.67,
+      "level": "County"
+    },
+    {
+      "code": "LR.CM",
+      "name": "Grand Cape Mount",
+      "count": 26.33,
+      "level": "County"
+    },
+    {
+      "code": "LR.GD",
+      "name": "Grand Gedeh",
+      "count": 25.42,
+      "level": "County"
+    },
+    {
+      "code": "LR.GK",
+      "name": "Grand Kru",
+      "count": 25.45,
+      "level": "County"
+    },
+    {
+      "code": "LR.LF",
+      "name": "Lofa",
+      "count": 24.86,
+      "level": "County"
+    },
+    {
+      "code": "LR.MG",
+      "name": "Margibi",
+      "count": 25.93,
+      "level": "County"
+    },
+    {
+      "code": "BF",
+      "name": "Burkina Faso",
+      "count": 29.28,
+      "level": "Country"
+    },
+    {
+      "code": "BF.BO",
+      "name": "Boucle Du Mouhoun",
+      "count": 29.31,
+      "level": "Region"
+    },
+    {
+      "code": "BF.CD",
+      "name": "Cascades",
+      "count": 28.18,
+      "level": "Region"
+    },
+    {
+      "code": "BF.CT",
+      "name": "Centre",
+      "count": 29.3,
+      "level": "Region"
+    },
+    {
+      "code": "BF.CE",
+      "name": "Centre-est",
+      "count": 29.13,
+      "level": "Region"
+    },
+    {
+      "code": "BF.CN",
+      "name": "Centre-nord",
+      "count": 29.73,
+      "level": "Region"
+    },
+    {
+      "code": "BF.CO",
+      "name": "Centre-ouest",
+      "count": 29.16,
+      "level": "Region"
+    },
+    {
+      "code": "BF.CS",
+      "name": "Centre-sud",
+      "count": 29.11,
+      "level": "Region"
+    },
+    {
+      "code": "BF.ES",
+      "name": "Est",
+      "count": 29.39,
+      "level": "Region"
+    },
+    {
+      "code": "BF.HB",
+      "name": "Hauts-bassins",
+      "count": 28.44,
+      "level": "Region"
+    },
+    {
+      "code": "BF.NO",
+      "name": "Nord",
+      "count": 29.81,
+      "level": "Region"
+    },
+    {
+      "code": "BF.PC",
+      "name": "Plateau Central",
+      "count": 29.39,
+      "level": "Region"
+    },
+    {
+      "code": "BF.SA",
+      "name": "Sahel",
+      "count": 30.25,
+      "level": "Region"
+    },
+    {
+      "code": "BF.SO",
+      "name": "Sud-ouest",
+      "count": 28.65,
+      "level": "Region"
+    },
+    {
+      "code": "NE",
+      "name": "Niger",
+      "count": 27.61,
+      "level": "Country"
+    },
+    {
+      "code": "NE.AG",
+      "name": "Agadez",
+      "count": 26.54,
+      "level": "Department"
+    },
+    {
+      "code": "NE.DF",
+      "name": "Diffa",
+      "count": 28.07,
+      "level": "Department"
+    },
+    {
+      "code": "NE.DS",
+      "name": "Dosso",
+      "count": 29.72,
+      "level": "Department"
+    },
+    {
+      "code": "NE.MA",
+      "name": "Maradi",
+      "count": 28.28,
+      "level": "Department"
+    },
+    {
+      "code": "NE.NI",
+      "name": "Niamey",
+      "count": 30.1,
+      "level": "CapitalDistrict"
+    },
+    {
+      "code": "NE.TH",
+      "name": "Tahoua",
+      "count": 29.27,
+      "level": "Department"
+    },
+    {
+      "code": "NE.TL",
+      "name": "Tillab\u00e9ri",
+      "count": 30.15,
+      "level": "Department"
+    },
+    {
+      "code": "NE.ZI",
+      "name": "Zinder",
+      "count": 28.23,
+      "level": "Department"
+    },
+    {
+      "code": "GH",
+      "name": "Ghana",
+      "count": 27.73,
+      "level": "Country"
+    },
+    {
+      "code": "GH.NE",
+      "name": "North East",
+      "count": 28.83,
+      "level": "Region"
+    },
+    {
+      "code": "GH.AH",
+      "name": "Ashanti",
+      "count": 27.02,
+      "level": "Region"
+    },
+    {
+      "code": "GH.BA",
+      "name": "Brong Ahafo",
+      "level": "region"
+    },
+    {
+      "code": "GH.CP",
+      "name": "Central",
+      "count": 26.87,
+      "level": "Region"
+    },
+    {
+      "code": "GH.EP",
+      "name": "Eastern",
+      "count": 27.12,
+      "level": "Region"
+    },
+    {
+      "code": "GH.AA",
+      "name": "Greater Accra",
+      "count": 27.48,
+      "level": "Region"
+    },
+    {
+      "code": "GH.NP",
+      "name": "Northern",
+      "count": 28.5,
+      "level": "Region"
+    },
+    {
+      "code": "GH.UE",
+      "name": "Upper East",
+      "count": 28.98,
+      "level": "Region"
+    },
+    {
+      "code": "GH.UW",
+      "name": "Upper West",
+      "count": 28.69,
+      "level": "Region"
+    },
+    {
+      "code": "GH.TV",
+      "name": "Volta",
+      "count": 27.41,
+      "level": "Region"
+    },
+    {
+      "code": "GH.WP",
+      "name": "Western",
+      "count": 26.82,
+      "level": "Region"
+    },
+    {
+      "code": "GH.SV",
+      "name": "Savannah",
+      "count": 28.14,
+      "level": "Region"
+    },
+    {
+      "code": "GH.AF",
+      "name": "Ahafo",
+      "count": 26.89,
+      "level": "Region"
+    },
+    {
+      "code": "GH.BE",
+      "name": "Bono East",
+      "count": 27.74,
+      "level": "Region"
+    },
+    {
+      "code": "GH.OT",
+      "name": "Oti",
+      "count": 27.74,
+      "level": "Region"
+    },
+    {
+      "code": "GH.WN",
+      "name": "Western North",
+      "count": 27.02,
+      "level": "Region"
+    },
+    {
+      "code": "CI",
+      "name": "C\u00f4te d'Ivoire",
+      "count": 26.84,
+      "level": "Country"
+    },
+    {
+      "code": "CI.AB",
+      "name": "Abidjan",
+      "count": 26.81,
+      "level": "Autonomousdistrict"
+    },
+    {
+      "code": "CI.SV",
+      "name": "Savanes",
+      "count": 27.33,
+      "level": "District"
+    },
+    {
+      "code": "CI.VB",
+      "name": "Vall\u00e9e du Bandama",
+      "count": 27.39,
+      "level": "District"
+    },
+    {
+      "code": "CI.WB",
+      "name": "Woroba",
+      "count": 26.37,
+      "level": "District"
+    },
+    {
+      "code": "CI.YM",
+      "name": "Yamoussoukro",
+      "count": 27.09,
+      "level": "Autonomousdistrict"
+    },
+    {
+      "code": "CI.ZA",
+      "name": "Zanzan",
+      "count": 27.6,
+      "level": "District"
+    },
+    {
+      "code": "CI.BA",
+      "name": "Bas-Sassandra",
+      "count": 26.09,
+      "level": "District"
+    },
+    {
+      "code": "CI.CM",
+      "name": "Como\u00e9",
+      "count": 26.98,
+      "level": "District"
+    },
+    {
+      "code": "CI.DE",
+      "name": "Dengu\u00e9l\u00e9",
+      "count": 26.38,
+      "level": "District"
+    },
+    {
+      "code": "CI.GD",
+      "name": "G\u00f4h-Djiboua",
+      "count": 26.76,
+      "level": "District"
+    },
+    {
+      "code": "CI.LA",
+      "name": "Lacs",
+      "count": 27.55,
+      "level": "District"
+    },
+    {
+      "code": "CI.LN",
+      "name": "Lagunes",
+      "count": 27.09,
+      "level": "District"
+    },
+    {
+      "code": "CI.MN",
+      "name": "Montagnes",
+      "count": 25.54,
+      "level": "District"
+    },
+    {
+      "code": "CI.SM",
+      "name": "Sassandra-Marahou\u00e9",
+      "count": 26.67,
+      "level": "District"
+    },
+    {
+      "code": "TG",
+      "name": "Togo",
+      "count": 27.47,
+      "level": "Country"
+    },
+    {
+      "code": "TG.CE",
+      "name": "Centrale",
+      "count": 27.03,
+      "level": "Region"
+    },
+    {
+      "code": "TG.KA",
+      "name": "Kara",
+      "count": 27.81,
+      "level": "Region"
+    },
+    {
+      "code": "TG.MA",
+      "name": "Maritime",
+      "count": 27.28,
+      "level": "Region"
+    },
+    {
+      "code": "TG.PL",
+      "name": "Plateaux",
+      "count": 27,
+      "level": "Region"
+    },
+    {
+      "code": "TG.SA",
+      "name": "Savanes",
+      "count": 28.76,
+      "level": "Region"
+    },
+    {
+      "code": "BJ",
+      "name": "Benin",
+      "count": 28.09,
+      "level": "Country"
+    },
+    {
+      "code": "BJ.AL",
+      "name": "Alibori",
+      "count": 28.69,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.AK",
+      "name": "Atakora",
+      "count": 28.35,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.AQ",
+      "name": "Atlantique",
+      "count": 27.82,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.BO",
+      "name": "Borgou",
+      "count": 27.71,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.CL",
+      "name": "Collines",
+      "count": 27.91,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.CF",
+      "name": "Couffo",
+      "count": 27.87,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.DO",
+      "name": "Donga",
+      "count": 27.51,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.LI",
+      "name": "Littoral",
+      "count": 27.64,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.MO",
+      "name": "Mono",
+      "count": 27.75,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.OU",
+      "name": "Oueme",
+      "count": 27.81,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.PL",
+      "name": "Plateau",
+      "count": 27.95,
+      "level": "Department"
+    },
+    {
+      "code": "BJ.ZO",
+      "name": "Zou",
+      "count": 28.08,
+      "level": "Department"
+    },
+    {
+      "code": "NG",
+      "name": "Nigeria",
+      "count": 27.15,
+      "level": "Country"
+    },
+    {
+      "code": "NG.AD",
+      "name": "Adamawa",
+      "count": 26.84,
+      "level": "State"
+    },
+    {
+      "code": "NG.AK",
+      "name": "Akwa Ibom",
+      "count": 26.48,
+      "level": "State"
+    },
+    {
+      "code": "NG.AN",
+      "name": "Anambra",
+      "count": 27.12,
+      "level": "State"
+    },
+    {
+      "code": "NG.BE",
+      "name": "Benue",
+      "count": 27.11,
+      "level": "State"
+    },
+    {
+      "code": "NG.BO",
+      "name": "Borno",
+      "count": 27.88,
+      "level": "State"
+    },
+    {
+      "code": "NG.CR",
+      "name": "Cross River",
+      "count": 26.46,
+      "level": "State"
+    },
+    {
+      "code": "NG.DE",
+      "name": "Delta",
+      "count": 27.25,
+      "level": "State"
+    },
+    {
+      "code": "NG.ED",
+      "name": "Edo",
+      "count": 27.26,
+      "level": "State"
+    },
+    {
+      "code": "NG.FC",
+      "name": "Abuja",
+      "count": 27.14,
+      "level": "State"
+    },
+    {
+      "code": "NG.IM",
+      "name": "Imo",
+      "count": 26.73,
+      "level": "State"
+    },
+    {
+      "code": "NG.JI",
+      "name": "Jigawa",
+      "count": 27.34,
+      "level": "State"
+    },
+    {
+      "code": "NG.KD",
+      "name": "Kaduna",
+      "count": 25.57,
+      "level": "State"
+    },
+    {
+      "code": "NG.KN",
+      "name": "Kano",
+      "count": 26.33,
+      "level": "State"
+    },
+    {
+      "code": "NG.KT",
+      "name": "Katsina",
+      "count": 26.56,
+      "level": "State"
+    },
+    {
+      "code": "NG.KE",
+      "name": "Kebbi",
+      "count": 28.78,
+      "level": "State"
+    },
+    {
+      "code": "NG.KO",
+      "name": "Kogi",
+      "count": 27.32,
+      "level": "State"
+    },
+    {
+      "code": "NG.KW",
+      "name": "Kwara",
+      "count": 27.57,
+      "level": "State"
+    },
+    {
+      "code": "NG.LA",
+      "name": "Lagos",
+      "count": 27.56,
+      "level": "State"
+    },
+    {
+      "code": "NG.NI",
+      "name": "Niger",
+      "count": 27.95,
+      "level": "State"
+    },
+    {
+      "code": "NG.OG",
+      "name": "Ogun",
+      "count": 27.69,
+      "level": "State"
+    },
+    {
+      "code": "NG.OS",
+      "name": "Osun",
+      "count": 26.79,
+      "level": "State"
+    },
+    {
+      "code": "NG.OY",
+      "name": "Oyo",
+      "count": 27.3,
+      "level": "State"
+    },
+    {
+      "code": "NG.TA",
+      "name": "Taraba",
+      "count": 26.21,
+      "level": "State"
+    },
+    {
+      "code": "NG.YO",
+      "name": "Yobe",
+      "count": 27.91,
+      "level": "State"
+    },
+    {
+      "code": "NG.AB",
+      "name": "Abia",
+      "count": 26.65,
+      "level": "State"
+    },
+    {
+      "code": "NG.BA",
+      "name": "Bauchi",
+      "count": 26.35,
+      "level": "State"
+    },
+    {
+      "code": "NG.BY",
+      "name": "Bayelsa",
+      "count": 26.48,
+      "level": "State"
+    },
+    {
+      "code": "NG.EB",
+      "name": "Ebonyi",
+      "count": 27.12,
+      "level": "State"
+    },
+    {
+      "code": "NG.EK",
+      "name": "Ekiti",
+      "count": 26.24,
+      "level": "State"
+    },
+    {
+      "code": "NG.EN",
+      "name": "Enugu",
+      "count": 26.95,
+      "level": "State"
+    },
+    {
+      "code": "NG.GO",
+      "name": "Gombe",
+      "count": 27.18,
+      "level": "State"
+    },
+    {
+      "code": "NG.NA",
+      "name": "Nassarawa",
+      "count": 26.86,
+      "level": "State"
+    },
+    {
+      "code": "NG.ON",
+      "name": "Ondo",
+      "count": 27.13,
+      "level": "State"
+    },
+    {
+      "code": "NG.PL",
+      "name": "Plateau",
+      "count": 25.73,
+      "level": "State"
+    },
+    {
+      "code": "NG.RI",
+      "name": "Rivers",
+      "count": 26.11,
+      "level": "State"
+    },
+    {
+      "code": "NG.SO",
+      "name": "Sokoto",
+      "count": 28.77,
+      "level": "State"
+    },
+    {
+      "code": "NG.ZA",
+      "name": "Zamfara",
+      "count": 27.32,
+      "level": "State"
+    },
+    {
+      "code": "DZ",
+      "name": "Algeria",
+      "count": 24.11,
+      "level": "Country"
+    },
+    {
+      "code": "DZ.AR",
+      "name": "Adrar",
+      "count": 26.88,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.AD",
+      "name": "Ain-Defla",
+      "count": 18.88,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.AT",
+      "name": "Ain-Temouchent",
+      "count": 19.26,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.AL",
+      "name": "Alger",
+      "count": 19.46,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.AN",
+      "name": "Annaba",
+      "count": 18.84,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.BT",
+      "name": "Batna",
+      "count": 17.48,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.BC",
+      "name": "Bechar",
+      "count": 24.24,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.BJ",
+      "name": "Bejaia",
+      "count": 17.62,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.BS",
+      "name": "Biskra",
+      "count": 21.8,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.BL",
+      "name": "Blida",
+      "count": 18.52,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.BB",
+      "name": "Bordj Bou Arreridj",
+      "count": 17.23,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.BU",
+      "name": "Bouira",
+      "count": 17.19,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.BM",
+      "name": "Boumerdes",
+      "count": 18.81,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.CH",
+      "name": "Chlef",
+      "count": 19.74,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.CO",
+      "name": "Constantine",
+      "count": 16.84,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.DJ",
+      "name": "Djelfa",
+      "count": 18.91,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.EB",
+      "name": "El Bayadh",
+      "count": 20.32,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.EO",
+      "name": "El Oued",
+      "count": 23.62,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.ET",
+      "name": "El-Tarf",
+      "count": 18.84,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.GR",
+      "name": "Ghardaia",
+      "count": 22.85,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.GL",
+      "name": "Guelma",
+      "count": 17.24,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.IL",
+      "name": "Illizi",
+      "count": 23.59,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.JJ",
+      "name": "Jijel",
+      "count": 17.94,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.KH",
+      "name": "Khenchela",
+      "count": 18.34,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.LG",
+      "name": "Laghouat",
+      "count": 19.16,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.MC",
+      "name": "Mascara",
+      "count": 19.04,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.MD",
+      "name": "Medea",
+      "count": 17.48,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.ML",
+      "name": "Mila",
+      "count": 17.05,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.MG",
+      "name": "Mostaganem",
+      "count": 19.97,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.MS",
+      "name": "M'Sila",
+      "count": 18.5,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.NA",
+      "name": "Naama",
+      "count": 18.37,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.OR",
+      "name": "Oran",
+      "count": 19.58,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.OG",
+      "name": "Ouargla",
+      "count": 24.16,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.OB",
+      "name": "Oum El Bouaghi",
+      "count": 16.44,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.RE",
+      "name": "Relizane",
+      "count": 19.86,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.SD",
+      "name": "Saida",
+      "count": 17.52,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.SF",
+      "name": "Setif",
+      "count": 16.88,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.SB",
+      "name": "Sidi Bel Abbes",
+      "count": 17.7,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.SK",
+      "name": "Skikda",
+      "count": 18.46,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.SA",
+      "name": "Souk-Ahras",
+      "count": 16.98,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.TM",
+      "name": "Tamanghasset",
+      "count": 25.46,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.TB",
+      "name": "Tebessa",
+      "count": 17.94,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.TN",
+      "name": "Tindouf",
+      "count": 25.58,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.TR",
+      "name": "Tiaret",
+      "count": 17.66,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.TP",
+      "name": "Tipaza",
+      "count": 19.65,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.TS",
+      "name": "Tissemsilt",
+      "count": 17.78,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.TO",
+      "name": "Tizi Ouzou",
+      "count": 18,
+      "level": "Province"
+    },
+    {
+      "code": "DZ.TL",
+      "name": "Tlemcen",
+      "count": 17.56,
+      "level": "Province"
+    },
+    {
+      "code": "LY",
+      "name": "Libya",
+      "count": 22.8,
+      "level": "Country"
+    },
+    {
+      "code": "LY.JK",
+      "name": "Al Aziziyah",
+      "count": 19.52,
+      "level": "District"
+    },
+    {
+      "code": "LY.JF",
+      "name": "Al Fatah",
+      "count": 21.48,
+      "level": "District"
+    },
+    {
+      "code": "LY.KU",
+      "name": "Al Jabal Al Akhdar",
+      "count": 23.93,
+      "level": "District"
+    },
+    {
+      "code": "LY.WS",
+      "name": "Al Jufrah",
+      "count": 22.74,
+      "level": "District"
+    },
+    {
+      "code": "LY.ZW",
+      "name": "Al Khoms",
+      "count": 22.22,
+      "level": "District"
+    },
+    {
+      "code": "LY.BG",
+      "name": "Al Kufrah",
+      "count": 21.11,
+      "level": "District"
+    },
+    {
+      "code": "LY.DA",
+      "name": "Ash Shati",
+      "count": 20.16,
+      "level": "District"
+    },
+    {
+      "code": "LY.MS",
+      "name": "Awbari",
+      "count": 21.66,
+      "level": "District"
+    },
+    {
+      "code": "LY.MU",
+      "name": "Az Zawia",
+      "count": 23.42,
+      "level": "District"
+    },
+    {
+      "code": "LY.NK",
+      "name": "Banghazi",
+      "count": 22.52,
+      "level": "District"
+    },
+    {
+      "code": "LY.SA",
+      "name": "Darnah",
+      "count": 22.68,
+      "level": "District"
+    },
+    {
+      "code": "LY.ST",
+      "name": "Ghadamis",
+      "count": 21.23,
+      "level": "District"
+    },
+    {
+      "code": "LY.TR",
+      "name": "Gharyan",
+      "count": 21.86,
+      "level": "District"
+    },
+    {
+      "code": "LY.BN",
+      "name": "Misurata",
+      "count": 21.57,
+      "level": "District"
+    },
+    {
+      "code": "LY.MU",
+      "name": "Murzuq",
+      "count": 23.42,
+      "level": "District"
+    },
+    {
+      "code": "LY.NK",
+      "name": "Nuqat Al Khams",
+      "count": 22.52,
+      "level": "District"
+    },
+    {
+      "code": "LY.SA",
+      "name": "Sabha",
+      "count": 22.68,
+      "level": "District"
+    },
+    {
+      "code": "LY.MS",
+      "name": "Sawfajjin",
+      "count": 21.66,
+      "level": "District"
+    },
+    {
+      "code": "LY.MU",
+      "name": "Surt",
+      "count": 23.42,
+      "level": "District"
+    },
+    {
+      "code": "LY.TR",
+      "name": "Tarhunah",
+      "count": 21.86,
+      "level": "District"
+    },
+    {
+      "code": "LY.TR",
+      "name": "Tripoli",
+      "count": 21.86,
+      "level": "District"
+    },
+    {
+      "code": "LY.TB",
+      "name": "Tubruq",
+      "level": "region"
+    },
+    {
+      "code": "LY.YF",
+      "name": "Yafran",
+      "level": "region"
+    },
+    {
+      "code": "LY.ZL",
+      "name": "Zeleitin",
+      "level": "region"
+    },
+    {
+      "code": "EG",
+      "name": "Arab Republic of Egypt",
+      "count": 23.23,
+      "level": "Country"
+    },
+    {
+      "code": "EG.IK",
+      "name": "Alexandria",
+      "count": 21.31,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.AT",
+      "name": "Assiut",
+      "count": 22.09,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.AN",
+      "name": "Aswan",
+      "count": 26.54,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.BH",
+      "name": "Behera",
+      "count": 21.54,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.BN",
+      "name": "Beni Suef",
+      "count": 22.12,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.QH",
+      "name": "Cairo",
+      "count": 22.28,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.DQ",
+      "name": "Dakahlia",
+      "count": 21.69,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.DT",
+      "name": "Damietta",
+      "count": 21.68,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.FY",
+      "name": "Fayoum",
+      "count": 22.45,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.GH",
+      "name": "Gharbia",
+      "count": 21.67,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.JZ",
+      "name": "Giza",
+      "count": 21.99,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.IS",
+      "name": "Ismailia",
+      "count": 22.41,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.KS",
+      "name": "Kafr El-Shikh",
+      "count": 21.4,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.QL",
+      "name": "Kalyoubia",
+      "count": 22.57,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.UQ",
+      "name": "Luxor",
+      "count": 25.07,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.MT",
+      "name": "Matrouh",
+      "count": 21.43,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.MN",
+      "name": "Menia",
+      "count": 22.04,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.MF",
+      "name": "Menoufia",
+      "count": 21.97,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.WJ",
+      "name": "New Valley",
+      "count": 23.73,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.SS",
+      "name": "North Sinai",
+      "count": 21.07,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.BS",
+      "name": "Port Said",
+      "count": 22.27,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.QN",
+      "name": "Qena",
+      "count": 24.44,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.BA",
+      "name": "Red Sea",
+      "count": 24.57,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.SQ",
+      "name": "Sharkia",
+      "count": 22.36,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.JS",
+      "name": "South Sinai",
+      "count": 21.05,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.SW",
+      "name": "Suez",
+      "count": 21.67,
+      "level": "Governorate"
+    },
+    {
+      "code": "EG.SJ",
+      "name": "Suhag",
+      "count": 23.37,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN",
+      "name": "Tunisia",
+      "count": 21.44,
+      "level": "Country"
+    },
+    {
+      "code": "TN.AN",
+      "name": "Ariana",
+      "count": 20.01,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.BA",
+      "name": "Ben Arous",
+      "count": 20.08,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.BZ",
+      "name": "Bizerte",
+      "count": 19.62,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.BJ",
+      "name": "Beja",
+      "count": 19.39,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.GB",
+      "name": "Gabes",
+      "count": 21.68,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.GF",
+      "name": "Gafsa",
+      "count": 20.9,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.JE",
+      "name": "Jendouba",
+      "count": 18.71,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.KR",
+      "name": "Kairouan",
+      "count": 20.43,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.KS",
+      "name": "Kasserine",
+      "count": 18.14,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.KB",
+      "name": "Kebili",
+      "count": 23.08,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.KF",
+      "name": "Le Kef",
+      "count": 18.02,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.MH",
+      "name": "Mahdia",
+      "count": 20.96,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.MN",
+      "name": "Manouba",
+      "count": 19.94,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.MS",
+      "name": "Monastir",
+      "count": 21.11,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.ME",
+      "name": "Medenine",
+      "count": 22.41,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.NB",
+      "name": "Nabeul",
+      "count": 20.06,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.SF",
+      "name": "Sfax",
+      "count": 20.92,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.SZ",
+      "name": "Sidi Bouz",
+      "count": 20.49,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.SL",
+      "name": "Siliana",
+      "count": 18.62,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.SS",
+      "name": "Sousse",
+      "count": 21.03,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.TA",
+      "name": "Tataouine",
+      "count": 22.98,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.TO",
+      "name": "Tozeur",
+      "count": 23.15,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.TU",
+      "name": "Tunis",
+      "count": 20.07,
+      "level": "Governorate"
+    },
+    {
+      "code": "TN.ZA",
+      "name": "Zaghouan",
+      "count": 19.92,
+      "level": "Governorate"
+    },
+    {
+      "code": "MA",
+      "name": "Morocco",
+      "count": 19.1,
+      "level": "Country"
+    },
+    {
+      "code": "MA.SM",
+      "name": "Souss-Massa",
+      "count": 19.74,
+      "level": "Region"
+    },
+    {
+      "code": "MA.TO",
+      "name": "Tanger-T\u00e9touan-Al Hoceima",
+      "count": 17.8,
+      "level": "Region"
+    },
+    {
+      "code": "MA.GC",
+      "name": "Casablanca-Settat",
+      "count": 19.36,
+      "level": "Region"
+    },
+    {
+      "code": "MA.MT",
+      "name": "Dr\u00e2a-Tafilalet",
+      "count": 19.71,
+      "level": "Region"
+    },
+    {
+      "code": "MA.GE",
+      "name": "F\u00e8s-Mekn\u00e8s",
+      "count": 21.56,
+      "level": "Region"
+    },
+    {
+      "code": "MA.OR",
+      "name": "Guelmim-Oued Noun",
+      "count": 18.28,
+      "level": "Region"
+    },
+    {
+      "code": "MA.LB",
+      "name": "L'oriental",
+      "count": 22.54,
+      "level": "Region"
+    },
+    {
+      "code": "MA.MK",
+      "name": "La\u00e2youne-Sakia al Hamra",
+      "count": 18.98,
+      "level": "Region"
+    },
+    {
+      "code": "MA.RZ",
+      "name": "Marrakech-Safi",
+      "count": 19,
+      "level": "Region"
+    },
+    {
+      "code": "MA.RK",
+      "name": "Rabat-Sal\u00e9-K\u00e9nitra",
+      "level": "region"
+    },
+    {
+      "code": "MA.BK",
+      "name": "B\u00e9ni Mellal-Kh\u00e9nifra",
+      "level": "region"
+    },
+    {
+      "code": "MU",
+      "name": "Mauritius",
+      "count": 23.27,
+      "level": "Country"
+    },
+    {
+      "code": "MU.BL",
+      "name": "Black River",
+      "count": 22.87,
+      "level": "District"
+    },
+    {
+      "code": "MU.FL",
+      "name": "Flacq",
+      "count": 23.3,
+      "level": "District"
+    },
+    {
+      "code": "MU.GP",
+      "name": "Grand Port",
+      "count": 23.3,
+      "level": "District"
+    },
+    {
+      "code": "MU.MO",
+      "name": "Moka",
+      "count": 23.26,
+      "level": "District"
+    },
+    {
+      "code": "MU.PA",
+      "name": "Pamplemousses",
+      "count": 23.3,
+      "level": "District"
+    },
+    {
+      "code": "MU.PW",
+      "name": "Plaines Wilhems",
+      "count": 23.02,
+      "level": "District"
+    },
+    {
+      "code": "MU.PL",
+      "name": "Port Louis",
+      "count": 23.14,
+      "level": "District"
+    },
+    {
+      "code": "MU.RR",
+      "name": "Riviere Du Rempart",
+      "count": 23.3,
+      "level": "District"
+    },
+    {
+      "code": "MU.SA",
+      "name": "Savanne",
+      "count": 22.99,
+      "level": "District"
+    }
+  ],
+  "preferred_children": {
+    "Continent": [
+      "Country"
+    ],
+    "Country": [
+      "Prefecture",
+      "EconomicPrefecture",
+      "Autonomousisland",
+      "OuterIslands",
+      "Governorate",
+      "State",
+      "AutonomousSector",
+      "AutonomousCommune",
+      "Department",
+      "Division",
+      "Autonomousdistrict",
+      "Town",
+      "IndependentCity",
+      "Province",
+      "CapitalDistrict",
+      "District",
+      "City",
+      "Region",
+      "County",
+      "AutonomousIsland"
+    ]
+  }
+}
