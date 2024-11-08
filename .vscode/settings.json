@@ -1,0 +1,6 @@
+{
+    "prettier.printWidth": 120,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "shapefiles",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A simple program to generate the python manage.py commands to load the shapefiles into the database",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "geojson2shp": "^0.5.0",
+    "glob": "^11.0.0",
+    "shapefile": "^0.6.6",
+    "stream-buffers": "^3.0.3",
+    "unzip-stream": "^0.3.4"
+  }
+}
