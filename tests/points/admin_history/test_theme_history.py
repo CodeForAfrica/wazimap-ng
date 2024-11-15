@@ -28,6 +28,7 @@ class TestThemeAdminHistory:
         data={
             'profile': profile.id,
             'name': "test theme",
+            'color': '#000000',
             'change_reason': 'New Object'
         }
         res = client.post(url, data, follow=True)
@@ -43,7 +44,9 @@ class TestThemeAdminHistory:
 
         assert history.history_user_id == superuser.id
         assert history.history_type == "+"
-        assert history.history_change_reason == '{"reason": "New Object"}'
+        assert history.history_change_reason == "New Object"
+        admin = ThemeAdmin(Theme, AdminSite())
+        assert admin.changed_fields(history) == "Not Available"
 
 
     def test_history_for_theme_edit_from_admin(
@@ -58,6 +61,7 @@ class TestThemeAdminHistory:
         data={
             'profile': profile.id,
             'name': 'Changed theme',
+            'color': '#000000',
             'change_reason': 'Changed Object'
         }
         res = client.post(url, data, follow=True)
@@ -73,6 +77,6 @@ class TestThemeAdminHistory:
 
         assert history.history_user_id == superuser.id
         assert history.history_type == "~"
-        change_reason = json.loads(history.history_change_reason)
-        assert  change_reason["reason"] == "Changed Object"
-        assert "name" in change_reason["changed_fields"]
+        assert history.history_change_reason == "Changed Object"
+        admin = ThemeAdmin(Theme, AdminSite())
+        assert admin.changed_fields(history) == "name"

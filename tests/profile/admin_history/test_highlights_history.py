@@ -43,9 +43,7 @@ class TestProfileHighlightAdminHistory:
         assert profile_highlight.history.count() == 2
         history = profile_highlight.history.first()
         assert history.history_user_id == superuser.id
-        changed_data = json.loads(history.history_change_reason)
-        assert changed_data["reason"] == "Changed Label"
-        assert "label" in changed_data["changed_fields"]
-        assert "display_format" in changed_data["changed_fields"]
-        assert "denominator" in changed_data["changed_fields"]
+        assert history.history_change_reason == "Changed Label"
+        admin = ProfileHighlightAdmin(ProfileHighlight, AdminSite())
+        assert admin.changed_fields(history) == "denominator, label, display_format"
         assert history.history_type == "~"
