@@ -7,19 +7,26 @@ from django.core.management.base import BaseCommand
 
 class Command(BaseCommand):
     """
-    This command reads shapefiles in a specific path and rebuilds them while splitting them
-    into smaller files based on the level so that they can correcly be loaded with the appropriate
-    level into the geography heirarchy.
+    This command reads shapefiles in a specific path and splits them
+    into smaller files based on the level so that they can correctly be
+    loaded with the appropriate level using the `loadshp` command into
+    the geography hierarchy.
 
-    If the source directory is
-    - ./Country/country.{shp,shx,dbf}
+    e.g:
+    If the source looks like:
 
-    and the shapefile contains different levels, provice and municipality, the output will be:
-    - ./Country/Province/province.{shp,shx,dbf}
-    - ./Country/Municipality/municipality.{shp,shx,dbf}
+    Country/
+    └── country.shp
+
+    and the shapefile contains different levels: City, Town and District. The output will be:
+    Country/
+    └── <output-dir>/
+        ├── City.shp
+        ├── Town.shp
+        └── District.shp
     """
 
-    help = "Rebuilds shapefiles in a directory into files based on the level."
+    help = "Splits shapefiles in a directory into files based on the level."
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -51,7 +58,7 @@ class Command(BaseCommand):
             )
             return
 
-        # read all files that end with .shp and store the paths without the extenstions
+        # read all files that end with .shp and store the paths without the extensions
         # Exclude the output directory from the list
         shapefiles_paths = []
         for root, dirs, files in os.walk(directory):
