@@ -1,6 +1,5 @@
 import os
-from hmac import new
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 import shapefile
 from django.core.management.base import BaseCommand
@@ -31,11 +30,19 @@ class Command(BaseCommand):
             type=str,
             help="List of keys in the shapefile record that could contain the level.",
         )
+        parser.add_argument(
+            "output_dir",
+            type=str,
+            nargs="?",
+            default="output",
+            help="Directory to split the shapefiles into. Any directories with this name will also be skipped.",
+        )
 
     def handle(self, *args, **options):
         # open the directory and read all shapefiles in the directory
         directory = options["directory"]
         level_keys = [f.strip() for f in options["level_key"].split(",")]
+        output_dir = options["output_dir"]
 
         # check if directory exists
         if not os.path.isdir(directory):
@@ -45,8 +52,11 @@ class Command(BaseCommand):
             return
 
         # read all files that end with .shp and store the paths without the extenstions
+        # Exclude the output directory from the list
         shapefiles_paths = []
-        for root, _, files in os.walk(directory):
+        for root, dirs, files in os.walk(directory):
+            if output_dir in dirs:
+                dirs.remove(output_dir)
             for file in files:
                 if file.endswith(".shp"):
                     shapefiles_paths.append(
@@ -69,24 +79,35 @@ class Command(BaseCommand):
             sf = shapefile.Reader(shapefile_path)
             for shape_record in sf.shapeRecords():
                 props = shape_record.__geo_interface__["properties"]
+                key = None
                 level = None
                 for key in level_keys:
                     if key in props:
+                        key = key
                         level = props[key]
                         break
 
-                if not level:
-                    self.stderr.write(
-                        self.style.WARNING(
-                            "Record does not have a level. Skipping record."
-                        )
+                if not key:
+                    warning = (
+                        "Shapefile fields do not contain any of the level keys. Skipping record.\n"
+                        f"Keys are: {', '.join(level_keys)}\n"
+                        f"Fields are: {', '.join(props.keys())}"
                     )
+                    self.stderr.write(self.style.WARNING(warning))
+                    continue
+
+                if not level:
+                    warning = (
+                        f"Level field '{key}' is empty. Skipping record.\n"
+                        f"Record is: {props}"
+                    )
+                    self.stderr.write(self.style.WARNING(warning))
                     continue
 
                 if level not in level_shapefile_map:
                     # Create a new shapefile for the level and copy over all the fields
                     new_path = os.path.join(
-                        os.path.dirname(shapefile_path), "rebuilt", level
+                        os.path.dirname(shapefile_path), output_dir, level
                     )
                     new_sf = shapefile.Writer(new_path)
                     for field in sf.fields:
