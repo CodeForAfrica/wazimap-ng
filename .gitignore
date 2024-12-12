@@ -1,4 +1,8 @@
+# Environment variables
 .env
+
+# OS Files
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -126,3 +130,6 @@ media/
 
 Dockerfile
 .idea
+
+wazimap-data/
+datasets/
